@@ -1,5 +1,5 @@
 import styles from "../../styles/Chapter.module.css";
-import Chapter from "./Componetns/Chapter";
+import Chapter from "./Components/Chapter";
 import cs from "../../assets/images/Chapter/cs.png";
 import emb from "../../assets/images/Chapter/emb.png";
 import pes from "../../assets/images/Chapter/pes.png";

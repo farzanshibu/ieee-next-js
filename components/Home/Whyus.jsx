@@ -3,7 +3,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import styles from "../../styles/Why.module.css";
 import logo from "../../assets/images/ieee-logo.png";
-import Why from "./Componetns/why";
+import Why from "./Components/Why";
 
 function Whyus(props) {
 	return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/Blog.module.css";
-import Blog from "./Componetns/Blog";
+import Blog from "./Components/Blog";
 
 function Blogs() {
 	return (
