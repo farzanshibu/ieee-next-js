@@ -1,0 +1,120 @@
+/* About Us Section
+--------------------------------*/
+
+
+#about {
+    background: #fff;
+    padding: 120px 0;
+}
+
+#about .aboutContainer .background {
+    margin: 20px 0;
+}
+
+#about .aboutContainer .content {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about .aboutContainer .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#about .aboutContainer p {
+    font-family: "Open Sans", sans-serif;
+    color: #444;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+#about .aboutContainer p:last-child {
+    margin-bottom: 0;
+}
+
+#about .aboutContainer .iconBox {
+    background: #fff;
+    background-size: cover;
+    padding: 0 0 30px 0;
+}
+
+#about .aboutContainer .iconBox .icon {
+    float: left;
+    background: #fff;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+#about .aboutContainer .iconBox .icon i {
+    color: #007bff;
+    font-size: 24px;
+}
+
+#about .aboutContainer .iconBox:hover .icon {
+    background: #007bff;
+}
+
+#about .aboutContainer .iconBox:hover .icon i {
+    color: #fff;
+}
+
+#about .aboutContainer .iconBox .title {
+    margin-left: 80px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#about .aboutContainer .iconBox .title a {
+    color: #283d50;
+}
+
+#about .aboutContainer .iconBox .description {
+    margin-left: 80px;
+    line-height: 15px;
+    font-size: 12px;
+}
+
+#about .about-extra {
+    padding-top: 60px;
+}
+
+#about .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.sectionHeader h3 {
+    font-size: 36px;
+    color: #283d50;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+}
+
+.sectionHeader p {
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    padding-bottom: 60px;
+    color: #556877;
+    width: 50%;
+}
+
+@media (max-width: 767px) {
+    .sectionHeader p {
+        width: 100%;
+    }
+}

@@ -1,0 +1,191 @@
+
+
+#contact {
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    padding-top: 120px;
+    overflow: hidden;
+}
+#contact a{
+  text-decoration: none;
+}
+#contact .sectionHeader {
+    padding-bottom: 30px;
+}
+
+#contact .contactImg {
+    align-self: center;
+    height: 500px;
+    padding-left: 1%;
+}
+
+@media (max-width: 767px) {
+    #contact .contactImg {
+        align-self: center;
+        height: 250px;
+        /* padding-left:2%; */
+        /* margin-right:2%; */
+    }
+}
+
+#contact .contact-about h3 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #007bff;
+}
+
+#contact .contact-about p {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Montserrat", sans-serif;
+    color: #888;
+}
+
+#contact .social-links {
+    padding-bottom: 20px;
+}
+
+#contact .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #fff;
+    color: #007bff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    border: 1px solid #007bff;
+}
+
+#contact .social-links a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+#contact .info {
+    color: #283d50;
+}
+
+#contact .info i {
+    font-size: 32px;
+    color: #007bff;
+    float: left;
+    line-height: 1;
+}
+
+#contact .info p {
+    padding: 0 0 10px 36px;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+#contact .phpEmailForm .validate {
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#contact .phpEmailForm .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+#contact .phpEmailForm .error-message br+br {
+    margin-top: 25px;
+}
+
+#contact .phpEmailForm .sentMessage {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+#contact .phpEmailForm .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+#contact .phpEmailForm .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+
+#contact .phpEmailForm input,
+#contact .phpEmailForm textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+#contact .phpEmailForm input:focus,
+#contact .phpEmailForm textarea:focus {
+    border-color: #007bff;
+}
+
+#contact .phpEmailForm input {
+    padding: 10px 15px;
+}
+
+#contact .phpEmailForm textarea {
+    padding: 12px 15px;
+}
+
+#contact .phpEmailForm button[type="submit"] {
+    background: #007bff;
+    border: 0;
+    border-radius: 20px;
+    padding: 8px 30px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#contact .phpEmailForm button[type="submit"]:hover {
+    background: #0067d5;
+    cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653840864/pointer_b340qh.png'), pointer;
+}
+
+@-webkit-keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

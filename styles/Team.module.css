@@ -1,0 +1,114 @@
+#team a {
+    text-decoration: none;
+}
+#team {
+			padding: 20px;
+			margin: 40px auto;
+			min-height: 60vh;
+		}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.product {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.product .itemBox {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 10px 20px;
+	display: block;
+}
+.product .itemBox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+#team {
+    background: #fff;
+    padding: 60px 0;
+}
+
+#team .member {
+  text-align: center;
+}
+
+#team .teamHl {
+    text-decoration: underline;
+}
+
+#team .member .memberInfo {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+#team .member .memberInfoContent {
+    margin-top: 50px;
+    transition: margin 0.2s;
+}
+
+#team .member:hover .memberInfo {
+    background: rgba(0, 31, 65, 0.381);
+    opacity: 1;
+    transition: 0.4s;
+    border-radius: 50%;
+		
+}
+.itemBox .member:hover img{
+    filter: blur(1.3rem);
+
+    
+}
+#team .member:hover .memberInfoContent {
+    margin-top: 0;
+    transition: margin 0.4s;
+}
+
+#team .member h4 {
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 18px;
+    color: #fff;
+}
+
+#team .member span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+    color: #fff;
+}
+
+#team .member .social {
+    margin-top: 15px;
+}
+
+
+#team .member .social .socialIcon{
+    margin: 0 4px;
+    transition: 0.2s;
+    filter: saturate(0);
+}
+#team .member .social .socialIcon:hover{
+    filter: saturate(3);
+}

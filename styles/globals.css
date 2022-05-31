@@ -1,0 +1,115 @@
+body {
+background: #fff;
+color: #444;
+font-family: "Open Sans", sans-serif;
+cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653830407/mouse_xibg4e.png'), auto;
+}
+
+button{
+cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653840864/pointer_b340qh.png'), pointer;
+
+}
+a {
+    text-decoration: none;
+cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653840864/pointer_b340qh.png'), pointer;
+
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #0b6bd3;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.scroll-container {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 5px 70px 5px 20px;
+    background: transparent;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.gridscroll {
+    display: inline-block;
+}
+
+.gridscroll img {
+    margin-right: 22px;
+}
+
+section {
+    overflow: hidden;
+}
+.sectionHeader h3 {
+    font-size: 36px;
+    color: #283d50;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+}
+
+.sectionHeader p {
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    padding-bottom: 60px;
+    color: #556877;
+    width: 50%;
+}
+
+@media (max-width: 767px) {
+    .sectionHeader p {
+        width: 100%;
+    }
+}
+
+.sectionBg {
+    background: #ecf5ff;
+}
+.product {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+  background-color: rgb(192, 239, 254);
+
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(116, 217, 247);
+  border-radius: 100vw;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(7, 119, 176);
+  border: 0.25em solid rgb(86, 165, 255);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(120 100% 10% / 1);
+}

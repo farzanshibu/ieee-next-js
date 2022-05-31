@@ -1,0 +1,134 @@
+
+/* Back to top button */
+
+.backTotop {
+    position: fixed;
+    background: #007bff;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    border-radius: 50%;
+    right: 15px;
+    bottom: 15px;
+    transition: all 0.1s;
+    z-index: 11;
+}
+.backTotop:hover{
+    background: #0069d9;
+}
+.backTotop i {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .backTotop {
+        bottom: 15px;
+    }
+}
+
+/* Icon bar */
+
+.iconBar {
+    z-index: 5;
+    position: fixed;
+    top: 50%;
+    border-radius: 50;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translate(-40px,-50%);
+    transition: all 0.3s ease-in-out;
+}
+.iconBar:hover{
+    transform: translate(-10px,-50%);
+}
+.iconBar a {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+.iconBar a:hover {
+    background-color: rgba( 0, 0, 0, 0.5);
+    transform: translate(40px,-50%);
+    color: white;
+}
+
+.facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.instagram {
+    background: #C32E9A;
+    color: white;
+}
+
+.spotify {
+    background: #2BD05D;
+    color: white;
+}
+
+.linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.float {
+    position: fixed;
+    padding: 0.5% 1.5%;
+    top: 100px;
+    right: 1%;
+    z-index: 11;
+    background-color: rgb(0, 122, 204);
+    color: #FFF;
+    font-size: larger;
+    border-radius: 20px;
+    text-align: center;
+    /* box-shadow: 2px 2px 3px #999; */
+}
+
+.float:hover {
+    color: #fff;
+    background-color: rgb(0, 85, 141);
+}
+
+.float2 {
+    position: fixed;
+    padding: 1.2% 2.4%;
+    bottom: 0%;
+    left: 0;
+    z-index: 5;
+    background-color: #00428A;
+    color: #FFF;
+    font-size: larger;
+    border-radius: 0 10px 0 0;
+    text-align: center;
+    /* box-shadow: 2px 2px 3px #999; */
+}
+
+.float2:hover {
+    color: #fff;
+    background-color: #1064be;
+}
+
+@media (max-width: 768px) {
+    .iconBar {
+        display: none;
+    }
+    .float {
+        display: none;
+    }
+    .float2 {
+        display: none;
+    }
+}

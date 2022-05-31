@@ -1,0 +1,92 @@
+#whyUs {
+    padding: 60px 0;
+    background: #004a99;
+}
+
+
+#whyUs .sectionHeader h3,
+#whyUs .sectionHeader p {
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    padding: 10px 0;
+}
+#whyUs .sectionHeader p{
+  text-align: center;
+    margin: auto;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 60px;
+    width: 50%;
+}
+#whyUs .card {
+    background: #00458f;
+    border-color: #00458f;
+    border-radius: 10px;
+    margin: 0 15px;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    #whyUs .card {
+        margin: 0;
+    }
+}
+
+#whyUs .card:hover {
+    background: #003B79;
+    border-color: #003b7a;
+}
+
+#whyUs .card i {
+    font-size: 48px;
+    padding-top: 15px;
+    color: #bfddfe;
+}
+
+#whyUs .card h5 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#whyUs .card p {
+    font-size: 15px;
+    color: #d8eafe;
+}
+
+#whyUs .card .readmore {
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+    border-bottom: #00458f solid 2px;
+}
+
+#whyUs .card .readmore:hover {
+    border-bottom: #fff solid 2px;
+}
+
+#whyUs .counters {
+    padding-top: 40px;
+}
+
+#whyUs .counters span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 55px;
+    display: block;
+    color: #fff;
+}
+
+#whyUs .counters p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #cce5ff;
+}
