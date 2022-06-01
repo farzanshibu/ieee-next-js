@@ -1,9 +1,8 @@
-import styles from "../../../styles/Team.module.css";
 import Team from "./Team";
 
 function SPS() {
 	return (
-		<div className={styles.product}>
+		<>
 			<Team
 				Name=""
 				Image={""}
@@ -28,7 +27,7 @@ function SPS() {
 				instagram=""
 				linkedin=""
 			/>
-		</div>
+		</>
 	);
 }
 

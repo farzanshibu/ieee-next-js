@@ -1,9 +1,8 @@
-import styles from "../../../styles/Team.module.css";
 import Team from "./Team";
 
 function PES() {
 	return (
-		<div className={styles.product}>
+		<>
 			<Team
 				Name=""
 				Image={""}
@@ -28,7 +27,7 @@ function PES() {
 				instagram=""
 				linkedin=""
 			/>
-		</div>
+		</>
 	);
 }
 

@@ -1,11 +1,27 @@
 import styles from "../../styles/Events.module.css";
-import { TabItem, Tabs } from "../Tab";
+import React, { useState } from "react";
+import {
+	MDBTabs,
+	MDBTabsItem,
+	MDBTabsLink,
+	MDBTabsContent,
+	MDBTabsPane,
+} from "mdb-react-ui-kit";
 import Year2019 from "./components/Year2019";
 import Year2020 from "./components/Year2020";
 import Year2021 from "./components/Year2021";
 import Year2022 from "./components/Year2022";
 
 function Events() {
+	const [basicActive, setBasicActive] = useState("2022");
+
+	const handleBasicClick = (value) => {
+		if (value === basicActive) {
+			return;
+		}
+
+		setBasicActive(value);
+	};
 	return (
 		<section id={styles.events} style={{ backgroundColor: "white" }}>
 			<div className="container" data-aos="fade-up">
@@ -18,20 +34,55 @@ function Events() {
 					</p>
 				</header>
 
-				<Tabs defaultIndex="1">
-					<TabItem label="2022" index="1">
+				<MDBTabs className="mb-5 justify-content-center">
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("2022")}
+							active={basicActive === "2022"}
+						>
+							2022
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("2021")}
+							active={basicActive === "2021"}
+						>
+							2021
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("2020")}
+							active={basicActive === "2020"}
+						>
+							2020
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("2019")}
+							active={basicActive === "2019"}
+						>
+							2019
+						</MDBTabsLink>
+					</MDBTabsItem>
+				</MDBTabs>
+
+				<MDBTabsContent>
+					<MDBTabsPane show={basicActive === "2022"}>
 						<Year2022 />
-					</TabItem>
-					<TabItem label="2021" index="2">
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "2021"}>
 						<Year2021 />
-					</TabItem>
-					<TabItem label="2020" index="3">
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "2020"}>
 						<Year2020 />
-					</TabItem>
-					<TabItem label="2019" index="4">
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "2019"}>
 						<Year2019 />
-					</TabItem>
-				</Tabs>
+					</MDBTabsPane>
+				</MDBTabsContent>
 			</div>
 		</section>
 	);

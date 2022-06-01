@@ -1,5 +1,12 @@
 import styles from "../../styles/Team.module.css";
-import { TabItem, Tabs } from "../Tab";
+import React, { useState } from "react";
+import {
+	MDBTabs,
+	MDBTabsItem,
+	MDBTabsLink,
+	MDBTabsContent,
+	MDBTabsPane,
+} from "mdb-react-ui-kit";
 import Team from "./components/Team";
 import Execom from "./components/Execom";
 import WIE from "./components/WIE";
@@ -11,6 +18,15 @@ import SPS from "./components/SPS";
 import EMBS from "./components/EMBS";
 
 function Teams() {
+	const [basicActive, setBasicActive] = useState("All");
+
+	const handleBasicClick = (value) => {
+		if (value === basicActive) {
+			return;
+		}
+
+		setBasicActive(value);
+	};
 	return (
 		<section id={styles.team}>
 			<div className="containers" data-aos="fade-up">
@@ -22,8 +38,83 @@ function Teams() {
 					</p>
 				</div>
 
-				<Tabs defaultIndex="1">
-					<TabItem label="All" index="1">
+				<MDBTabs className="mb-5 justify-content-center">
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("All")}
+							active={basicActive === "All"}
+						>
+							All
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("Execom")}
+							active={basicActive === "Execom"}
+						>
+							Execom
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("CS")}
+							active={basicActive === "CS"}
+						>
+							CS
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("PES")}
+							active={basicActive === "PES"}
+						>
+							PES
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("RAS")}
+							active={basicActive === "RAS"}
+						>
+							RAS
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("SPS")}
+							active={basicActive === "SPS"}
+						>
+							SPS
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("EMBS")}
+							active={basicActive === "EMBS"}
+						>
+							EMBS
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("SIGHT")}
+							active={basicActive === "SIGHT"}
+						>
+							SIGHT
+						</MDBTabsLink>
+					</MDBTabsItem>
+					<MDBTabsItem>
+						<MDBTabsLink
+							onClick={() => handleBasicClick("WIE")}
+							active={basicActive === "WIE"}
+						>
+							WIE
+						</MDBTabsLink>
+					</MDBTabsItem>
+				</MDBTabs>
+
+				<MDBTabsContent>
+					<MDBTabsPane show={basicActive === "All"}>
 						<div className={styles.product}>
 							<Team
 								Name=""
@@ -49,6 +140,7 @@ function Teams() {
 								instagram=""
 								linkedin=""
 							/>
+
 							<Execom />
 							<CS />
 							<PES />
@@ -58,32 +150,48 @@ function Teams() {
 							<SIGHT />
 							<WIE />
 						</div>
-					</TabItem>
-					<TabItem label="Execom" index="2">
-						<Execom />
-					</TabItem>
-					<TabItem label="CS" index="3">
-						<CS />
-					</TabItem>
-					<TabItem label="PES" index="4">
-						<PES />
-					</TabItem>
-					<TabItem label="RAS" index="5">
-						<RAS />
-					</TabItem>
-					<TabItem label="SPS" index="6">
-						<SPS />
-					</TabItem>
-					<TabItem label="EMBS" index="7">
-						<EMBS />
-					</TabItem>
-					<TabItem label="SIGHT" index="8">
-						<SIGHT />
-					</TabItem>
-					<TabItem label="WIE" index="9">
-						<WIE />
-					</TabItem>
-				</Tabs>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "Execom"}>
+						<div className={styles.product}>
+							<Execom />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "CS"}>
+						<div className={styles.product}>
+							<CS />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "PES"}>
+						<div className={styles.product}>
+							<PES />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "RAS"}>
+						<div className={styles.product}>
+							<RAS />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "SPS"}>
+						<div className={styles.product}>
+							<SPS />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "EMBS"}>
+						<div className={styles.product}>
+							<EMBS />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "SIGHT"}>
+						<div className={styles.product}>
+							<SIGHT />
+						</div>
+					</MDBTabsPane>
+					<MDBTabsPane show={basicActive === "WIE"}>
+						<div className={styles.product}>
+							<WIE />
+						</div>
+					</MDBTabsPane>
+				</MDBTabsContent>
 			</div>
 		</section>
 	);

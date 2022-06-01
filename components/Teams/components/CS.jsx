@@ -1,9 +1,8 @@
-import styles from "../../../styles/Team.module.css";
 import Team from "./Team";
 
 function CS() {
 	return (
-		<div className={styles.product}>
+		<>
 			<Team
 				Name=""
 				Image={""}
@@ -28,7 +27,7 @@ function CS() {
 				instagram=""
 				linkedin=""
 			/>
-		</div>
+		</>
 	);
 }
 
