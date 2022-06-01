@@ -10,6 +10,13 @@ function index() {
 			</Head>
 			<section id={styles.team}>
 				<div className="container min-vh-95 w-50" data-aos="fade-up">
+					<header className="sectionHeader">
+						<h3 style={{ color: "black" }}>Reports and Story</h3>
+						{/* <p style={{ color: "black" }}>
+							Here is a snapshot of various events, which can be cherished for a
+							long time.
+						</p> */}
+					</header>
 					<div className="table-responsive d-flex gap-5 flex-wrap justify-content-center p-5">
 						<table className="table table-hover">
 							<thead className="table-primary">

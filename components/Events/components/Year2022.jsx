@@ -13,6 +13,15 @@ function Year2022() {
 					SpeakerName=""
 					SpeakerDesingation=""
 				/>
+				<Event
+					Title=""
+					Description=""
+					Image={""}
+					Time=""
+					Date=""
+					SpeakerName=""
+					SpeakerDesingation=""
+				/>
 			</div>
 		</div>
 	);

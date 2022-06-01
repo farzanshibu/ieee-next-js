@@ -13,6 +13,24 @@ function Year2020() {
 					SpeakerName=""
 					SpeakerDesingation=""
 				/>
+				<Event
+					Title=""
+					Description=""
+					Image={""}
+					Time=""
+					Date=""
+					SpeakerName=""
+					SpeakerDesingation=""
+				/>
+				<Event
+					Title=""
+					Description=""
+					Image={""}
+					Time=""
+					Date=""
+					SpeakerName=""
+					SpeakerDesingation=""
+				/>
 			</div>
 		</div>
 	);

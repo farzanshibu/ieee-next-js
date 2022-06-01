@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Gallery from "../components/Gallery";
-import styles from "../styles/Why.module.css";
+import styles from "../styles/Gallery.module.css";
 
 function gallery() {
 	return (
@@ -8,7 +8,7 @@ function gallery() {
 			<Head>
 				<title>Gallery | IEEE</title>
 			</Head>
-			<section id={styles.whyUs} style={{ backgroundColor: "white" }}>
+			<section id={styles.gallery} style={{ backgroundColor: "white" }}>
 				<div className="container py-5" data-aos="fade-up">
 					<header className="sectionHeader">
 						<h3 style={{ color: "black" }}>Gallery</h3>

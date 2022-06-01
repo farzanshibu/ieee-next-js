@@ -5,6 +5,7 @@ import AddToCal from "./components/AddToCal";
 
 function Details() {
 	const time = Date.parse("may 31, 2022 03:30:50 PM") - Date.parse(new Date());
+	const imageUrl = "https://source.unsplash.com/random/800x600";
 
 	return (
 		<section id={styles.team}>
@@ -15,7 +16,10 @@ function Details() {
 							<Image
 								className="object-cover object-center rounded"
 								alt="event"
-								src={eventImg}
+								width={800}
+								height={600}
+								layout="raw"
+								src={imageUrl}
 							/>
 						</div>
 						<div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">

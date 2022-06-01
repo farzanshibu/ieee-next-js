@@ -36,6 +36,7 @@
 	}
 	#events {
 		padding: 65px;
+		padding-top: 100px;
 		margin: 40px auto;
 		min-height: 60vh;
 	}

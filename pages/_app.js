@@ -10,7 +10,8 @@ import Navbar from "../components/Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function MyApp({ Component, pageProps, props }) {
+let footerPropsCache;
+function MyApp({ Component, pageProps, footerProps }) {
 	useEffect(() => {
 		AOS.init({
 			// Global settings:
@@ -34,6 +35,10 @@ function MyApp({ Component, pageProps, props }) {
 		});
 	}, []);
 
+	useEffect(() => {
+		footerPropsCache = footerProps;
+	}, [footerProps]);
+
 	// You can also pass an optional settings object
 	// below listed default settings
 
@@ -47,22 +52,26 @@ function MyApp({ Component, pageProps, props }) {
 			</Head>
 			<Navbar />
 			<Component {...pageProps} />
-			<Footer {...props} />
+			<Footer {...footerProps} />
 		</>
 	);
 }
 
 MyApp.getInitialProps = async () => {
+	if (footerPropsCache) {
+		return { footerProps: footerPropsCache };
+	}
 	const query = encodeURIComponent(`*[ _type == "home" ]`);
 	// const result = await client.fetch(query).then((res) => res.json());
 	const url = `https://d19epmzn.api.sanity.io/v1/data/query/production?query=${query}`;
 	const result = await fetch(url).then((res) => res.json());
 	const post = result.result[0];
+	footerPropsCache = post;
 
 	return {
-		props: {
-			name: post.name || null,
-			contactNumber: post.phoneNumber || null,
+		footerProps: {
+			name: post.name,
+			contactNumber: post.phoneNumber,
 		},
 	};
 };
