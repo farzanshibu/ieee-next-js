@@ -5,7 +5,8 @@ import "../styles/tailwind.css";
 import "tailwindcss/tailwind.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
+import Navbar from "../components/Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
