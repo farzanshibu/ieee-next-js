@@ -8,6 +8,8 @@ background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.2
 
 .bg a{
     text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
 }
 
 .dropdown{
@@ -16,6 +18,10 @@ background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.2
     color: black;
     box-shadow: none;
     vertical-align: middle;
+}
+.dropdownMenu li, .dropdownMenu li a:hover{
+    background-color: transparent;
+    font-weight: 900;
 }
 
 

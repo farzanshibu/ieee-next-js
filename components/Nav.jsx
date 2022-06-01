@@ -9,6 +9,7 @@ import {
 	MDBDropdownLink,
 } from "mdb-react-ui-kit";
 import styles from "../styles/Navbar.module.css";
+import Gallery from "./Gallery";
 
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -48,10 +49,13 @@ function Navbar() {
 										</a>
 									</Link>
 									<MDBDropdown>
-										<MDBDropdownToggle className={styles.dropdown}>
+										<MDBDropdownToggle tag="a" className={styles.dropdown}>
 											More
 										</MDBDropdownToggle>
 										<MDBDropdownMenu className={styles.dropdownMenu}>
+											<MDBDropdownItem>
+												<MDBDropdownLink></MDBDropdownLink>
+											</MDBDropdownItem>
 											<MDBDropdownItem>
 												<MDBDropdownLink href="/gallery">
 													Gallery

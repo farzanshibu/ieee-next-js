@@ -5,12 +5,12 @@ font-family: "Open Sans", sans-serif;
 cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653830407/mouse_xibg4e.png'), auto;
 }
 
-button{
+button {
 cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653840864/pointer_b340qh.png'), pointer;
 
 }
 a {
-    text-decoration: none;
+text-decoration: none;
 cursor: url('https://res.cloudinary.com/sulthaan/image/upload/v1653840864/pointer_b340qh.png'), pointer;
 
 }
