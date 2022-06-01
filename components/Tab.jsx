@@ -1,5 +1,5 @@
-import styles from "../styles/Tab.module.css";
 import React from "react";
+import styles from "../styles/Tab.module.css";
 
 export const TabItem = (props) => <div {...props} />;
 

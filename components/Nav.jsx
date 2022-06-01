@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import Dropdown from "react-bootstrap/Dropdown";
-import Image from "next/image";
-import logo from "../assets/images/ieeeheader.png";
+import {
+	MDBDropdown,
+	MDBDropdownMenu,
+	MDBDropdownToggle,
+	MDBDropdownItem,
+	MDBDropdownLink,
+} from "mdb-react-ui-kit";
 import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
@@ -43,20 +47,28 @@ function Navbar() {
 											Events
 										</a>
 									</Link>
-									<Dropdown>
-										<Dropdown.Toggle className={styles.dropdown}>
+									<MDBDropdown>
+										<MDBDropdownToggle className={styles.dropdown}>
 											More
-										</Dropdown.Toggle>
-										<Dropdown.Menu className={styles.dropdownMenu}>
-											<Dropdown.Item href="/gallery">Gallery</Dropdown.Item>
-											<Dropdown.Item href="/story-&-report">
-												Reports & Stories
-											</Dropdown.Item>
-											<Dropdown.Item href="/wallofweb">
-												Wall of Web
-											</Dropdown.Item>
-										</Dropdown.Menu>
-									</Dropdown>
+										</MDBDropdownToggle>
+										<MDBDropdownMenu className={styles.dropdownMenu}>
+											<MDBDropdownItem>
+												<MDBDropdownLink href="/gallery">
+													Gallery
+												</MDBDropdownLink>
+											</MDBDropdownItem>
+											<MDBDropdownItem>
+												<MDBDropdownLink href="/story-&-report">
+													Reports and Stories
+												</MDBDropdownLink>
+											</MDBDropdownItem>
+											<MDBDropdownItem>
+												<MDBDropdownLink href="/wallofweb">
+													Wall of Web
+												</MDBDropdownLink>
+											</MDBDropdownItem>
+										</MDBDropdownMenu>
+									</MDBDropdown>
 									<Link href="/#contact">
 										<a className=" bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black">
 											Contact
@@ -148,7 +160,7 @@ function Navbar() {
 										Events
 									</a>
 								</Link>
-								<Link href="/gallary">
+								<Link href="/gallery">
 									<a className=" hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 										Gallery
 									</a>
