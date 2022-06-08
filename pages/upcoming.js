@@ -1,8 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Events.module.css";
+import urlFor from "../components/imgtoUrl";
+import Client from "../client";
 import Event from "../components/Events/components/Event";
 
-function upcoming() {
+function upcoming(props) {
+	const events = Object.values(props);
 	return (
 		<>
 			<Head>
@@ -20,35 +24,20 @@ function upcoming() {
 					</header>
 					<div className="product">
 						<div className="row w-100">
-							<Event
-								Title=""
-								Description=""
-								Image={""}
-								Time=""
-								Date=""
-								SpeakerName=""
-								SpeakerDesingation=""
-							/>
-
-							<Event
-								Title=""
-								Description=""
-								Image={""}
-								Time=""
-								Date=""
-								SpeakerName=""
-								SpeakerDesingation=""
-							/>
-
-							<Event
-								Title=""
-								Description=""
-								Image={""}
-								Time=""
-								Date=""
-								SpeakerName=""
-								SpeakerDesingation=""
-							/>
+							{events.map((event) => (
+								<Link key={event._id} href={`/events/${event.slug.current}`}>
+									<a>
+										<Event
+											Title={event.title}
+											Description={event.shortDesignation}
+											Image={urlFor(event.image).format("webp").url()}
+											DateandTime={event.date}
+											SpeakerName={event.speakers[0].speakerName}
+											SpeakerDesingation={event.speakers[0].speakerDesignation}
+										/>
+									</a>
+								</Link>
+							))}
 						</div>
 					</div>
 				</div>
@@ -56,5 +45,14 @@ function upcoming() {
 		</>
 	);
 }
+export const getServerSideProps = async () => {
+	const events = await Client.fetch(
+		`*[_type == "events" && lastDate > '${new Date().toISOString()}']`,
+	);
+
+	return {
+		props: { ...events },
+	};
+};
 
 export default upcoming;

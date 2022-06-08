@@ -15,8 +15,8 @@ function Gallery(props) {
 					<Image
 						src={props.Image || imageUrl}
 						alt="galleryImages"
-						width="600"
-						height="400"
+						width="230"
+						height="140"
 						layout="raw"
 					/>
 				</a>

@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 import contact from "/assets/images/contatct.png";
 import styles from "../../styles/Contact.module.css";
 
 function Contact(props) {
-	const [data, setData] = useState("");
 	const {
 		register,
 		handleSubmit,
@@ -44,8 +43,8 @@ function Contact(props) {
 							<div className={`${styles.info} col-md-3`}>
 								<i className="fa-solid fa-mobile"></i>
 								<p>
-									<a href={` tel: +91${props.contactNumber}`}>
-										+91 {props.contactNumber}
+									<a href={` tel: +91${props[0].phoneNumber}`}>
+										+91 {props[0].phoneNumber}
 									</a>
 								</p>
 							</div>

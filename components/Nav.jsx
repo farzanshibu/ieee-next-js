@@ -9,7 +9,6 @@ import {
 	MDBDropdownLink,
 } from "mdb-react-ui-kit";
 import styles from "../styles/Navbar.module.css";
-import Gallery from "./Gallery";
 
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -34,17 +33,17 @@ function Navbar() {
 										</a>
 									</Link>
 									<Link href="/#about">
-										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:font-black">
+										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-semibold hover:font-black">
 											About
 										</a>
 									</Link>
 									<Link href="/team">
-										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:font-black">
+										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-semibold hover:font-black">
 											Team
 										</a>
 									</Link>
 									<Link href="/events">
-										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium hover:font-black">
+										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-semibold hover:font-black">
 											Events
 										</a>
 									</Link>

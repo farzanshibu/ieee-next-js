@@ -8,21 +8,21 @@ import TeamPage from "./TeamPage";
 import Vision from "./Vision";
 import Whyus from "./Whyus";
 
-function Home(props) {
+function Home({ info, team, blog }) {
 	return (
 		<div>
 			<Spotlight />
 			<div id="about">
 				<About />
 			</div>
-			<Banner />
+			<Banner {...info} />
 			<Vision />
-			<Whyus {...props} />
-			<TeamPage />
+			<Whyus {...info} />
+			<TeamPage {...team} />
 			<Chapters />
-			<Blogs />
+			<Blogs {...blog} />
 			<div id="contact">
-				<Contact {...props} />
+				<Contact {...info} />
 			</div>
 		</div>
 	);

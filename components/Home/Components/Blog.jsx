@@ -37,7 +37,7 @@ function Blog(props) {
 						fontSize: "unset",
 					}}
 				>
-					{props.Description}
+					{props.Author}
 				</h3>
 			</div>
 		</div>

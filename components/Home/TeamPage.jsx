@@ -1,8 +1,12 @@
-import styles from "../../styles/Team.module.css";
-import Team from "../Teams/components/Team";
 import Link from "next/link";
 
-function TeamPage() {
+import urlFor from "../imgtoUrl";
+import Team from "../Teams/components/Team";
+import styles from "../../styles/Team.module.css";
+
+function TeamPage(props) {
+	const members = Object.values(props);
+
 	return (
 		<section id={styles.team}>
 			<div className="container" data-aos="fade-up">
@@ -18,60 +22,18 @@ function TeamPage() {
 				</div>
 
 				<div className={styles.product}>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="100"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="200"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="300"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="100"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="200"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="300"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
+					{members.map((member) => (
+						<Team
+							key={member._id}
+							Name={member.name}
+							Image={urlFor(member.image).auto("format").url()}
+							Designation={member.designation}
+							animate="100"
+							facebook={member.facebook}
+							instagram={member.instagram}
+							linkedin={member.linkedin}
+						/>
+					))}
 				</div>
 			</div>
 		</section>

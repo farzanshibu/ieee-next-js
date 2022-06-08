@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import Client from "../../client";
+
 import styles from "../../styles/Team.module.css";
 
-function index() {
+function index(props) {
+	const data = Object.values(props);
+
 	return (
 		<>
 			<Head>
@@ -27,17 +31,19 @@ function index() {
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row" className="text-center p-4">
-										1
-									</th>
-									<td className="text-center p-4">1</td>
-									<td className="text-center p-4">
-										<Link href="/story-&-report/1">
-											<a className="btn btn-success">Download</a>
-										</Link>
-									</td>
-								</tr>
+								{data.map((report, index) => (
+									<tr key={report._id}>
+										<th scope="row" className="text-center p-4">
+											{index + 1}
+										</th>
+										<td className="text-center p-4">{report.storyName}</td>
+										<td className="text-center p-4">
+											<Link href={`/story-&-report/${report.slug.current}`}>
+												<a className="btn btn-success">Download</a>
+											</Link>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 						<table className="table table-hover">
@@ -49,17 +55,22 @@ function index() {
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row" className="text-center p-4">
-										1
-									</th>
-									<td className="text-center p-4">2</td>
-									<td className="text-center p-4">
-										<a href="" className="btn btn-success px-4">
-											View
-										</a>
-									</td>
-								</tr>
+								{data.map((report, index) => (
+									<tr key={report._id}>
+										<th scope="row" className="text-center p-4">
+											{index + 1}
+										</th>
+										<td className="text-center p-4">{report.reportName}</td>
+										<td className="text-center p-4">
+											<a
+												href={report.documentUrl}
+												className="btn btn-success px-4"
+											>
+												View
+											</a>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
@@ -68,5 +79,13 @@ function index() {
 		</>
 	);
 }
+
+export const getServerSideProps = async () => {
+	const data = await Client.fetch(`*[ _type == "reportandstory" ]`);
+
+	return {
+		props: { ...data },
+	};
+};
 
 export default index;

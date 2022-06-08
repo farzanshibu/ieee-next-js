@@ -1,7 +1,9 @@
-import styles from "../../styles/Team.module.css";
+import urlFor from "../imgtoUrl";
 import Team from "./components/Team";
+import styles from "../../styles/Team.module.css";
 
-function WalllofWeb() {
+function WalllofWeb(props) {
+	const members = Object.values(props);
 	return (
 		<section id={styles.team}>
 			<div className="containers" data-aos="fade-up">
@@ -10,33 +12,18 @@ function WalllofWeb() {
 					<p>Meet the amazing team behind the IEEE MBCET Website.</p>
 				</div>
 				<div className={styles.product}>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="100"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="200"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
-					<Team
-						Name=""
-						Image={""}
-						Designation=""
-						animate="300"
-						facebook=""
-						instagram=""
-						linkedin=""
-					/>
+					{members.map((member) => (
+						<Team
+							key={member._id}
+							Name={member.name}
+							Image={urlFor(member.image).auto("format").url()}
+							Designation={member.designation}
+							animate="100"
+							facebook={member.facebook}
+							instagram={member.instagram}
+							linkedin={member.linkedin}
+						/>
+					))}
 				</div>
 			</div>
 		</section>

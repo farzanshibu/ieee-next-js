@@ -1,40 +1,40 @@
-
-.bg{
-background: rgb(1, 1, 6);
--webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.27) 100%);
+.bg {
+    background: rgb(1, 1, 6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.27) 100%);
 }
 
-.bg a{
+.bg a {
     text-decoration: none;
     padding: 9px 13px;
     border-radius: 5px;
 }
 
-.dropdown{
+.dropdown {
     background-color: transparent;
     border: none;
     color: black;
     box-shadow: none;
     vertical-align: middle;
 }
-.dropdownMenu li, .dropdownMenu li a:hover{
+
+.dropdownMenu li,
+.dropdownMenu li a:hover {
     background-color: transparent;
     font-weight: 900;
 }
 
-
-.dropdown:hover{
+.dropdown:hover {
     background-color: #93c5fd;
     border: none;
     box-shadow: none;
     color: black;
 }
 
-.dropdownMenu{
-background: rgb(1, 1, 6);
--webkit-backdrop-filter: blur(10px);
-background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.27) 100%);
-backdrop-filter: blur(10px);
+.dropdownMenu {
+    background: rgb(1, 1, 6);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgb(126, 126, 127) 0%, rgba(3, 206, 247, 0.27) 100%);
+    backdrop-filter: blur(10px);
 }

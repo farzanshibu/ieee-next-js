@@ -1,8 +1,9 @@
 import sanityClient from "@sanity/client";
 
 const Client = sanityClient({
-	projectId: "d19epmzn", // you can find this in sanity.json
-	dataset: "production", // or the name you chose in step 1
-	useCdn: true, // `false` if you want to ensure fresh data
+	projectId: "5rt0wm1l",
+	dataset: "production",
+	useCdn: true,
+	apiVersion: "v2021-10-21",
 });
 export default Client;

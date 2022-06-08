@@ -11,6 +11,6 @@ module.exports = {
 		},
 	},
 	images: {
-		domains: ["source.unsplash.com"],
+		domains: ["source.unsplash.com", "cdn.sanity.io"],
 	},
 };

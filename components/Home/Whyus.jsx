@@ -79,7 +79,7 @@ function Whyus(props) {
 						className="col-lg-3 col-6 text-center"
 					>
 						<span>
-							<CountUp end={props.members} redraw={true}>
+							<CountUp end={props[0].members} redraw={true}>
 								{({ countUpRef, start }) => (
 									<VisibilitySensor onChange={start} delayedCall>
 										<span ref={countUpRef} />
@@ -94,7 +94,7 @@ function Whyus(props) {
 						className="col-lg-3 col-6 text-center"
 					>
 						<span>
-							<CountUp end={props.events} redraw={true}>
+							<CountUp end={props[0].events} redraw={true}>
 								{({ countUpRef, start }) => (
 									<VisibilitySensor onChange={start} delayedCall>
 										<span ref={countUpRef} />
@@ -109,7 +109,7 @@ function Whyus(props) {
 						className="col-lg-3 col-6 text-center"
 					>
 						<span>
-							<CountUp end={props.socities} redraw={true}>
+							<CountUp end={props[0].socities} redraw={true}>
 								{({ countUpRef, start }) => (
 									<VisibilitySensor onChange={start} delayedCall>
 										<span ref={countUpRef} />
@@ -124,7 +124,7 @@ function Whyus(props) {
 						className="col-lg-3 col-6 text-center"
 					>
 						<span>
-							<CountUp end={props.affinityGroups} redraw={true}>
+							<CountUp end={props[0].affinityGroups} redraw={true}>
 								{({ countUpRef, start }) => (
 									<VisibilitySensor onChange={start} delayedCall>
 										<span ref={countUpRef} />
@@ -139,7 +139,7 @@ function Whyus(props) {
 						className="col-lg-3 col-6 text-center"
 					>
 						<span>
-							<CountUp end={props.mission} redraw={true}>
+							<CountUp end={props[0].mission} redraw={true}>
 								{({ countUpRef, start }) => (
 									<VisibilitySensor onChange={start} delayedCall>
 										<span ref={countUpRef} />

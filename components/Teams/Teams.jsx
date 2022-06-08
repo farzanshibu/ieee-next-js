@@ -7,6 +7,7 @@ import {
 	MDBTabsContent,
 	MDBTabsPane,
 } from "mdb-react-ui-kit";
+import urlFor from "../imgtoUrl";
 import Team from "./components/Team";
 import Execom from "./components/Execom";
 import WIE from "./components/WIE";
@@ -17,9 +18,9 @@ import RAS from "./components/RAS";
 import SPS from "./components/SPS";
 import EMBS from "./components/EMBS";
 
-function Teams() {
+function Teams({ cs, embs, execom, other, pes, ras, sps, sight, wie }) {
+	const others = Object.values(other);
 	const [basicActive, setBasicActive] = useState("All");
-
 	const handleBasicClick = (value) => {
 		if (value === basicActive) {
 			return;
@@ -116,79 +117,65 @@ function Teams() {
 				<MDBTabsContent>
 					<MDBTabsPane show={basicActive === "All"}>
 						<div className={styles.product}>
-							<Team
-								Name=""
-								Image={""}
-								Designation=""
-								facebook=""
-								instagram=""
-								linkedin=""
-							/>
-							<Team
-								Name=""
-								Image={""}
-								Designation=""
-								facebook=""
-								instagram=""
-								linkedin=""
-							/>
-							<Team
-								Name=""
-								Image={""}
-								Designation=""
-								facebook=""
-								instagram=""
-								linkedin=""
-							/>
-
-							<Execom />
-							<CS />
-							<PES />
-							<RAS />
-							<SPS />
-							<EMBS />
-							<SIGHT />
-							<WIE />
+							{others.map((other) => (
+								<Team
+									key={other._id}
+									Name={other.name}
+									Image={urlFor(other.image).auto("format").url()}
+									Designation={other.designation}
+									facebook={other.facebook}
+									instagram={other.instagram}
+									linkedin={other.linkedin}
+								/>
+							))}
+							<Execom {...execom} />
+							<CS {...cs} />
+							<PES {...pes} />
+							<RAS {...ras} />
+							<SPS {...sps} />
+							<EMBS {...embs} />
+							<SIGHT {...sight} />
+							<WIE {...wie} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "Execom"}>
 						<div className={styles.product}>
-							<Execom />
+							<Execom {...execom} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "CS"}>
 						<div className={styles.product}>
-							<CS />
+							<CS {...cs} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "PES"}>
 						<div className={styles.product}>
-							<PES />
+							<PES {...pes} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "RAS"}>
 						<div className={styles.product}>
-							<RAS />
+							<RAS {...ras} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "SPS"}>
 						<div className={styles.product}>
-							<SPS />
+							<SPS {...sps} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "EMBS"}>
 						<div className={styles.product}>
-							<EMBS />
+							<EMBS {...embs} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "SIGHT"}>
 						<div className={styles.product}>
-							<SIGHT />
+							<SIGHT {...sight} />
 						</div>
 					</MDBTabsPane>
 					<MDBTabsPane show={basicActive === "WIE"}>
 						<div className={styles.product}>
-							<WIE />
+							<WIE {...wie} />
 						</div>
 					</MDBTabsPane>
 				</MDBTabsContent>

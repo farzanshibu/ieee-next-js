@@ -7,14 +7,12 @@ import {
 	MDBTabsContent,
 	MDBTabsPane,
 } from "mdb-react-ui-kit";
-import Year2019 from "./components/Year2019";
-import Year2020 from "./components/Year2020";
-import Year2021 from "./components/Year2021";
-import Year2022 from "./components/Year2022";
+import Year from "./components/Year";
 
-function Events() {
-	const [basicActive, setBasicActive] = useState("2022");
-
+function Events(props) {
+	const events = Object.values(props);
+	let currentYear = new Date().getFullYear();
+	const [basicActive, setBasicActive] = useState(`${currentYear}`);
 	const handleBasicClick = (value) => {
 		if (value === basicActive) {
 			return;
@@ -35,53 +33,24 @@ function Events() {
 				</header>
 
 				<MDBTabs className="mb-5 justify-content-center">
-					<MDBTabsItem>
-						<MDBTabsLink
-							onClick={() => handleBasicClick("2022")}
-							active={basicActive === "2022"}
-						>
-							2022
-						</MDBTabsLink>
-					</MDBTabsItem>
-					<MDBTabsItem>
-						<MDBTabsLink
-							onClick={() => handleBasicClick("2021")}
-							active={basicActive === "2021"}
-						>
-							2021
-						</MDBTabsLink>
-					</MDBTabsItem>
-					<MDBTabsItem>
-						<MDBTabsLink
-							onClick={() => handleBasicClick("2020")}
-							active={basicActive === "2020"}
-						>
-							2020
-						</MDBTabsLink>
-					</MDBTabsItem>
-					<MDBTabsItem>
-						<MDBTabsLink
-							onClick={() => handleBasicClick("2019")}
-							active={basicActive === "2019"}
-						>
-							2019
-						</MDBTabsLink>
-					</MDBTabsItem>
+					{events.map((eventyear) => (
+						<MDBTabsItem key={eventyear._id}>
+							<MDBTabsLink
+								onClick={() => handleBasicClick(eventyear.year)}
+								active={basicActive === eventyear.year}
+							>
+								{eventyear.year}
+							</MDBTabsLink>
+						</MDBTabsItem>
+					))}
 				</MDBTabs>
 
 				<MDBTabsContent>
-					<MDBTabsPane show={basicActive === "2022"}>
-						<Year2022 />
-					</MDBTabsPane>
-					<MDBTabsPane show={basicActive === "2021"}>
-						<Year2021 />
-					</MDBTabsPane>
-					<MDBTabsPane show={basicActive === "2020"}>
-						<Year2020 />
-					</MDBTabsPane>
-					<MDBTabsPane show={basicActive === "2019"}>
-						<Year2019 />
-					</MDBTabsPane>
+					{events.map((event) => (
+						<MDBTabsPane key={event._id} show={basicActive === event.year}>
+							<Year {...event.eventsArray} />
+						</MDBTabsPane>
+					))}
 				</MDBTabsContent>
 			</div>
 		</section>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import footer from "../assets/images/mbcet.png";
 import styles from "../styles/Footer.module.css";
 
@@ -57,8 +58,8 @@ function Footer(props) {
 								<br />
 								Trivandrum, Kerala, India
 								<br />
-								<strong>Phone:</strong> +91 {props.contactNumber} ( {props.name}{" "}
-								)
+								<strong>Phone:</strong> +91 {props[0].phoneNumber} ({" "}
+								{props[0].name})
 								<br />
 								<strong>Email:</strong>
 								<a href="mailto:ieeesb@mbcet.ac.in" style={{ color: "white" }}>

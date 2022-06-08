@@ -1,16 +1,24 @@
 import Head from "next/head";
-
+import Client from "../client";
 import WalllofWeb from "../components/Teams/WalllofWeb";
 
-function wallofWeb() {
+function wallofWeb(props) {
 	return (
 		<>
 			<Head>
 				<title>Walll of Web | IEEE</title>
 			</Head>
-			<WalllofWeb />
+			<WalllofWeb {...props} />
 		</>
 	);
 }
+
+export const getServerSideProps = async () => {
+	const data = await Client.fetch(`*[ _type == "wow" ]`);
+
+	return {
+		props: { ...data },
+	};
+};
 
 export default wallofWeb;

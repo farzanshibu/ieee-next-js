@@ -1,16 +1,19 @@
 import Head from "next/head";
+import AOS from "aos";
 import { useEffect } from "react";
-import "../styles/globals.css";
-import "../styles/tailwind.css";
 import "tailwindcss/tailwind.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import Footer from "../components/Footer";
-import Navbar from "../components/Nav";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
+import Footer from "../components/Footer";
+import Navbar from "../components/Nav";
+import Client from "../client";
+import "../styles/globals.css";
+import "../styles/tailwind.css";
+
 let footerPropsCache;
+
 function MyApp({ Component, pageProps, footerProps }) {
 	useEffect(() => {
 		AOS.init({
@@ -38,10 +41,6 @@ function MyApp({ Component, pageProps, footerProps }) {
 	useEffect(() => {
 		footerPropsCache = footerProps;
 	}, [footerProps]);
-
-	// You can also pass an optional settings object
-	// below listed default settings
-
 	return (
 		<>
 			<Head>
@@ -61,18 +60,11 @@ MyApp.getInitialProps = async () => {
 	if (footerPropsCache) {
 		return { footerProps: footerPropsCache };
 	}
-	const query = encodeURIComponent(`*[ _type == "home" ]`);
-	// const result = await client.fetch(query).then((res) => res.json());
-	const url = `https://d19epmzn.api.sanity.io/v1/data/query/production?query=${query}`;
-	const result = await fetch(url).then((res) => res.json());
-	const post = result.result[0];
-	footerPropsCache = post;
+	const result = await Client.fetch(`*[ _type == "home" ]`);
+	footerPropsCache = result;
 
 	return {
-		footerProps: {
-			name: post.name,
-			contactNumber: post.phoneNumber,
-		},
+		footerProps: { ...result },
 	};
 };
 export default MyApp;

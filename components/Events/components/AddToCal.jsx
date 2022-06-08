@@ -1,6 +1,8 @@
-import { atcb_action } from "add-to-calendar-button";
+// import { useEffect } from "react";
+import { atcb_action, atcb_init } from "add-to-calendar-button";
 
 function AddToCal(props) {
+	// useEffect(() => atcb_init(), []);
 	return (
 		<div>
 			<button
@@ -15,16 +17,14 @@ function AddToCal(props) {
 					atcb_action({
 						name: props.name,
 						startDate: props.startDate,
-						endDate: props.endDate,
 						description: props.description,
 						startTime: props.startTime,
-						endTime: props.endTime,
 						options: ["Apple", "Google", "Outlook.com"],
 						trigger: "click",
 					});
 				}}
 			>
-				<i className="fa-solid fa-calendar-plus"></i>
+				<i className="fa-solid fa-calendar-plus"></i> Calendar
 			</button>
 		</div>
 	);
