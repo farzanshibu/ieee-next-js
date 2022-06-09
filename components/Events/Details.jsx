@@ -4,18 +4,32 @@ import urlFor from "../imgtoUrl";
 import styles from "../../styles/Team.module.css";
 import AddToCal from "./components/AddToCal";
 
+const options = {
+	day: "numeric",
+	month: "long",
+	year: "numeric",
+	weekday: "short",
+};
+
+function formatTime(eventTime, prefix = "") {
+	return typeof eventTime == "object"
+		? prefix + eventTime.toLocaleTimeString()
+		: "";
+}
+
+function formatDate(eventDate, prefix = "") {
+	return typeof eventDate == "object"
+		? prefix + eventDate.toLocaleDateString("en-US", options)
+		: "";
+}
+
 function Details(props) {
-	const options = {
-		day: "numeric",
-		month: "long",
-		weekday: "short",
-		hour: "numeric",
-		minute: "numeric",
-	};
-	let d = new Date(props[0].date);
-	let clock = d.toLocaleString("en-US", options);
-	let time = Date.parse(clock) - Date.parse(new Date());
-	console.log(time);
+	let d = new Date(props[0].lastDate);
+	let time = Date.parse(d) - Date.parse(new Date());
+	let eventDate = formatDate(new Date(props[0].date));
+	let eventTime = formatTime(new Date(props[0].date));
+	let eventLastDate = formatDate(new Date(props[0].date3));
+	let icon = { "calendar-plus-o": "left" };
 	const imageUrl = "https://source.unsplash.com/random/800x600";
 
 	return (
@@ -53,6 +67,7 @@ function Details(props) {
 										Speakers :
 										{props[0].speakers.map((speaker, index) => (
 											<strong key={index}>
+												{" "}
 												{speaker.speakerName}
 												<span>, {speaker.speakerDesignation}</span>
 											</strong>
@@ -63,25 +78,14 @@ function Details(props) {
 								)}
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
-										{props[0].date ? d.toLocaleString("en-US", options) : ""}
+										{props[0].date ? eventDate : "ss"}
+										{props[0].date3 ? " - " + eventLastDate : ""}
+										{props[0].date ? ", " + eventTime : "ss"}
 									</strong>
 								</p>
 							</div>
 
-							{time > "0" && time < "600000" ? (
-								<AddToCal
-									name={props[0].title}
-									startDate={d.toLocaleDateString()}
-									description={
-										props[0].shortDesignation
-											? props[0].shortDesignation
-											: "Ieee Event"
-									}
-									startTime={d.toLocaleTimeString()}
-								/>
-							) : (
-								""
-							)}
+							{time > "0" ? <button>Add to event</button> : ""}
 							{props[0].rule ? (
 								<div>
 									<strong>Rules</strong>
@@ -94,16 +98,14 @@ function Details(props) {
 							<div className="flex justify-center">
 								<a
 									id="address"
-									href={
-										time <= "-1200000" ? props[0].knowMore : props[0].formLink
-									}
+									href={time < "0" ? props[0].knowMore : props[0].formLink}
 								>
 									<button
 										id="btnval"
 										className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-lg"
 										type="button"
 									>
-										{time <= "-1200000" ? "Know-More" : "Register"}
+										{time < "0" ? "Know-More" : "Register"}
 									</button>
 								</a>
 								<a href="mailto:ieeesb@mbcet.ac.in">

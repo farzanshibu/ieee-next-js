@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import contact from "/assets/images/contatct.png";
 import styles from "../../styles/Contact.module.css";
 
