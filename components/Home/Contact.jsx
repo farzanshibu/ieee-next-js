@@ -51,7 +51,7 @@ function Contact(props) {
 
 						<div className="form">
 							<form
-								netlify
+								data-netlify="true"
 								method="POST"
 								autoComplete="off"
 								onSubmit={handleSubmit((data) => {
@@ -100,6 +100,11 @@ function Contact(props) {
 							>
 								<div className="row justify-content-center align-items-center">
 									<div className="form-group col-lg-6">
+										<input
+											type="hidden"
+											name="iee-contact-form"
+											value="contact"
+										/>
 										<input
 											type="text"
 											className="form-control"
