@@ -5,6 +5,18 @@ import urlFor from "../components/imgtoUrl";
 import Client from "../client";
 import Event from "../components/Events/components/Event";
 
+function formatDate(date) {
+	var d = new Date(date),
+		month = "" + (d.getMonth() + 1),
+		day = "" + d.getDate(),
+		year = d.getFullYear();
+
+	if (month.length < 2) month = "0" + month;
+	if (day.length < 2) day = "0" + day;
+
+	return [year, month, day].join("-");
+}
+
 function upcoming(props) {
 	const events = Object.values(props);
 	return (
@@ -25,18 +37,24 @@ function upcoming(props) {
 					<div className="product">
 						<div className="row w-100">
 							{events.map((event) => (
-								<Link key={event._id} href={`/events/${event.slug.current}`}>
-									<a>
-										<Event
-											Title={event.title}
-											Description={event.shortDesignation}
-											Image={urlFor(event.image).format("webp").url()}
-											DateandTime={event.date}
-											SpeakerName={event.speakers[0].speakerName}
-											SpeakerDesingation={event.speakers[0].speakerDesignation}
-										/>
-									</a>
-								</Link>
+								<div key={event._id} className="col-md-4 p-2">
+									<Link href={`/events/${event.slug.current}`}>
+										<a>
+											<Event
+												Title={event.title}
+												Description={event.shortDesignation}
+												Image={urlFor(event.image).format("webp").url()}
+												DateandTime={event.date}
+												SpeakerName={
+													event.speakers ? event.speakers[0].speakerName : ""
+												}
+												SpeakerDesingation={
+													event.speakers ? event.speakers[0].speakerName : ""
+												}
+											/>
+										</a>
+									</Link>
+								</div>
 							))}
 						</div>
 					</div>
@@ -46,10 +64,10 @@ function upcoming(props) {
 	);
 }
 export const getServerSideProps = async () => {
+	var date = formatDate(new Date());
 	const events = await Client.fetch(
-		`*[_type == "events" && lastDate > '${new Date().toISOString()}']`,
+		`*[_type == "events"].eventsArray[lastDate >= "${date}"]`,
 	);
-
 	return {
 		props: { ...events },
 	};
