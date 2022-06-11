@@ -51,10 +51,18 @@ function Contact(props) {
 
 						<div className="form">
 							<form
+								netlify
 								method="POST"
 								autoComplete="off"
 								onSubmit={handleSubmit((data) => {
 									console.log(data);
+									fetch("https://formspree.io/f/xeqndgek", {
+										method: "POST",
+										body: JSON.stringify(data),
+										headers: {
+											Accept: "application/json",
+										},
+									});
 									fetch("/api/contact", {
 										method: "post",
 										body: JSON.stringify(data),
