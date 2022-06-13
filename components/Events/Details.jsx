@@ -78,9 +78,10 @@ function Details(props) {
 								)}
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
-										{props[0].date ? eventDate : "ss"}
+										{props[0].date ? eventDate : ""}
 										{props[0].date3 ? " - " + eventLastDate : ""}
-										{props[0].date ? ", " + eventTime : "ss"}
+										{props[0].date ? ", " + eventTime : ""}
+										{props[0].place ? ", " + props[0].place : ""}
 									</strong>
 								</p>
 							</div>
