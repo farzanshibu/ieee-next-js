@@ -75,6 +75,20 @@ function Details(props) {
 								) : (
 									""
 								)}
+								{props[0].contacts ? (
+									<p style={{ textAlign: "left", margin: 0, padding: 0 }}>
+										Contacts :
+										{props[0].contacts.map((speaker, index) => (
+											<strong key={index}>
+												{" "}
+												{speaker.contactName}
+												<span>, {speaker.contactNumber}</span>
+											</strong>
+										))}
+									</p>
+								) : (
+									""
+								)}
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
 										{props[0].date ? eventDate : ""}
