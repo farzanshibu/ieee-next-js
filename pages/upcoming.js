@@ -68,6 +68,7 @@ export const getServerSideProps = async () => {
 	const events = await Client.fetch(
 		`*[_type == "events"].eventsArray[lastDate >= "${date}"]`,
 	);
+	console.log(events);
 	return {
 		props: { ...events },
 	};

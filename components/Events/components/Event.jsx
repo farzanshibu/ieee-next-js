@@ -17,7 +17,10 @@ function Event(props) {
 	return (
 		<div
 			className={`${styles.card} ${styles.cardHasBg} text-white click-col`}
-			style={{ background: `url(${props.Image || imageUrl}) no-repeat` }}
+			style={{
+				background: `url(${props.Image || imageUrl}) no-repeat`,
+				backgroundSize: "cover",
+			}}
 			data-aos="zoom-in"
 			data-aos-delay={props.animate || "100"}
 		>

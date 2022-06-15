@@ -9,22 +9,26 @@ function Year(props) {
 			<div className="row w-100">
 				{events.map((event) => (
 					<div key={event._id} className="col-md-4 p-2">
-						<Link href={`/events/${event.slug.current}`}>
-							<a>
-								<Event
-									Title={event.title}
-									Description={event.shortDesignation}
-									Image={urlFor(event.image).format("webp").url()}
-									DateandTime={event.date}
-									SpeakerName={
-										event.speakers ? event.speakers[0].speakerName : ""
-									}
-									SpeakerDesingation={
-										event.speakers ? event.speakers[0].speakerName : ""
-									}
-								/>
-							</a>
-						</Link>
+						{event.slug?.current ? (
+							<Link href={`/events/${event.slug?.current}`}>
+								<a>
+									<Event
+										Title={event?.title}
+										Description={event?.shortDesignation}
+										Image={urlFor(event?.image).format("webp").url()}
+										DateandTime={event?.date}
+										SpeakerName={
+											event.speakers ? event.speakers[0].speakerName : ""
+										}
+										SpeakerDesingation={
+											event.speakers ? event.speakers[0].speakerName : ""
+										}
+									/>
+								</a>
+							</Link>
+						) : (
+							""
+						)}
 					</div>
 				))}
 			</div>

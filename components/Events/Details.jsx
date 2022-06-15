@@ -24,12 +24,11 @@ function formatDate(eventDate, prefix = "") {
 }
 
 function Details(props) {
-	let d = new Date(props[0].lastDate);
+	let d = new Date(props[0]?.lastDate);
 	let time = Date.parse(d) - Date.parse(new Date());
-	let eventDate = formatDate(new Date(props[0].date));
-	let eventTime = formatTime(new Date(props[0].date));
-	let eventLastDate = formatDate(new Date(props[0].date3));
-	let icon = { "calendar-plus-o": "left" };
+	let eventDate = formatDate(new Date(props[0]?.date));
+	let eventTime = formatTime(new Date(props[0]?.date));
+	let eventLastDate = formatDate(new Date(props[0]?.date3));
 	const imageUrl = "https://source.unsplash.com/random/800x600";
 
 	return (
@@ -40,7 +39,7 @@ function Details(props) {
 						<div className="flex justify-center align-center lg:max-w-lg lg:w-full ">
 							<Image
 								className="object-cover object-center rounded "
-								src={urlFor(props[0].image).auto("format").url() || imageUrl}
+								src={urlFor(props[0].image).auto("format").url()}
 								alt="event"
 								width={800}
 								height={600}
@@ -49,7 +48,7 @@ function Details(props) {
 						</div>
 						<div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center gap-3">
 							<h1 className="title-font sm:text-4xl text-3xl mb-3 font-medium text-gray-900">
-								{props[0].title}
+								{props[0]?.title}
 							</h1>
 							<div
 								className="mb-8 leading-relaxed"
@@ -78,9 +77,9 @@ function Details(props) {
 								)}
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
-										{props[0].date ? eventDate : "ss"}
+										{props[0].date ? eventDate : ""}
 										{props[0].date3 ? " - " + eventLastDate : ""}
-										{props[0].date ? ", " + eventTime : "ss"}
+										{props[0].date ? ", " + eventTime : ""}
 									</strong>
 								</p>
 							</div>

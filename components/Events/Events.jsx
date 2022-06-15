@@ -36,10 +36,10 @@ function Events(props) {
 					{events.map((eventyear) => (
 						<MDBTabsItem key={eventyear._id}>
 							<MDBTabsLink
-								onClick={() => handleBasicClick(eventyear.year)}
-								active={basicActive === eventyear.year}
+								onClick={() => handleBasicClick(eventyear?.year)}
+								active={basicActive === eventyear?.year}
 							>
-								{eventyear.year}
+								{eventyear?.year}
 							</MDBTabsLink>
 						</MDBTabsItem>
 					))}
@@ -47,8 +47,8 @@ function Events(props) {
 
 				<MDBTabsContent>
 					{events.map((event) => (
-						<MDBTabsPane key={event._id} show={basicActive === event.year}>
-							<Year {...event.eventsArray} />
+						<MDBTabsPane key={event._id} show={basicActive === event?.year}>
+							<Year {...event?.eventsArray} />
 						</MDBTabsPane>
 					))}
 				</MDBTabsContent>
