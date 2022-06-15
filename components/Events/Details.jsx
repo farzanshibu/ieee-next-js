@@ -80,10 +80,6 @@ function Details(props) {
 										{props[0].date ? eventDate : ""}
 										{props[0].date3 ? " - " + eventLastDate : ""}
 										{props[0].date ? ", " + eventTime : ""}
-<<<<<<< HEAD
-=======
-										{props[0].place ? ", " + props[0].place : ""}
->>>>>>> 8f3ca365e3983c8241f9bc8021f07c3e3e97dc3a
 									</strong>
 								</p>
 							</div>
