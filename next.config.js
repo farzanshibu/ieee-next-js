@@ -7,7 +7,7 @@ module.exports = nextConfig;
 module.exports = {
 	experimental: {
 		images: {
-			layoutRaw: true,
+			allowFutureImage: true,
 		},
 	},
 	images: {

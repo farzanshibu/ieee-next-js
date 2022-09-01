@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 import Client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
 import urlFor from "../../components/imgtoUrl";
@@ -29,8 +29,8 @@ function blogId(props) {
 									: imageUrl
 							}
 							alt="image2"
-							width="500px"
-							height="500px"
+							width="500"
+							height="500"
 							layout="raw"
 						/>
 						<Image
@@ -40,8 +40,8 @@ function blogId(props) {
 									: imageUrl
 							}
 							alt="image1"
-							width="500px"
-							height="500px"
+							width="500"
+							height="500"
 							layout="raw"
 						/>
 					</div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/future/image";
 import styles from "../../../styles/Chapter.module.css";
 
 function Chapter(props) {
