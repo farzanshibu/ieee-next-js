@@ -1,109 +1,107 @@
 #intro {
-    width: 100%;
-    position: relative;
-    background: url("../assets/images/ieee-web2-.png") center bottom no-repeat;
-    background-size: cover;
-    padding: 400px 0 120px 0
-    
+	width: 100%;
+	position: relative;
+	background: url("../assets/images/ieee-web2-.png") center bottom no-repeat;
+	background-size: cover;
+	padding: 400px 0 120px 0;
 }
 
 @media (max-width: 991px) {
-    #intro {
-        padding: 140px 0 60px 0;
-    }
+	#intro {
+		padding: 140px 0 60px 0;
+	}
 }
 
 @media (max-width: 574px) {
-    #intro {
-        padding: 100px 0 20px 0;
-    }
+	#intro {
+		padding: 120px 0 20px 0;
+	}
 }
 
 #intro .introImg {
-    width: 50%;
-    float: right;
+	width: 50%;
+	float: right;
 }
 
 @media (max-width: 991px) {
-    #intro .introImg {
-        width: 80%;
-        float: none;
-        margin: 0 auto 25px auto;
-    }
+	#intro .introImg {
+		width: 80%;
+		float: none;
+		margin: 0 auto 25px auto;
+	}
 }
 
 #intro .introInfo {
-    width: 50%;
-    float: left;
+	width: 50%;
+	float: left;
 }
 
 @media (max-width: 991px) {
-    #intro .introInfo {
-        width: 80%;
-        float: none;
-        margin: auto;
-        text-align: center;
-    }
+	#intro .introInfo {
+		width: 80%;
+		float: none;
+		margin: auto;
+		text-align: center;
+	}
 }
 
 @media (max-width: 767px) {
-    #intro .introInfo {
-        width: 100%;
-    }
+	#intro .introInfo {
+		width: 100%;
+	}
 }
 
 #intro .introInfo h2 {
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 48px;
-    font-weight: 700;
+	color: #fff;
+	margin-bottom: 40px;
+	font-size: 48px;
+	font-weight: 700;
 }
 
 #intro .introInfo h2 span {
-    color: #74b5fc;
-    text-decoration: underline;
+	color: #74b5fc;
+	text-decoration: underline;
 }
 
 @media (max-width: 767px) {
-    #intro .introInfo h2 {
-        font-size: 34px;
-        margin-bottom: 30px;
-    }
+	#intro .introInfo h2 {
+		font-size: 34px;
+		margin-bottom: 30px;
+	}
 }
 
 #intro .introInfo .btnGetStarted,
 #intro .introInfo .btnServices {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 0 20px 20px 0;
-    color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 10px 32px;
+	border-radius: 50px;
+	transition: 0.5s;
+	margin: 0 20px 20px 0;
+	color: #fff;
 }
 
 #intro .introInfo .btnGetStarted {
-    background: none;
-    border: 2px solid #ffffff;
-    color: #fff;
+	background: none;
+	border: 2px solid #ffffff;
+	color: #fff;
 }
 
 #intro .introInfo .btnGetStarted:hover {
-    background: #007bff;
-    border-color: #007bff;
-    color: #fff;
+	background: #007bff;
+	border-color: #007bff;
+	color: #fff;
 }
 
 #intro .introInfo .btnServices {
-    border: 2px solid #fff;
+	border: 2px solid #fff;
 }
 
 #intro .introInfo .btnServices:hover {
-    background: #007bff;
-    border-color: #007bff;
-    color: #fff;
+	background: #007bff;
+	border-color: #007bff;
+	color: #fff;
 }
-

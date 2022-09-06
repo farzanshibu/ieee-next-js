@@ -49,7 +49,7 @@ function Contact(props) {
 							</div>
 						</div>
 
-						<div className="form">
+						<div className="form pt-3">
 							<form
 								method="POST"
 								autoComplete="off"
