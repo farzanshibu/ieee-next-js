@@ -15,7 +15,7 @@ function Navbar() {
 	return (
 		<div className=" d-flex justify-center">
 			<nav
-				className={`${styles.bg} mt-4 d-flex h-20 shadow-sm fixed w-9/12 z-10 rounded-full justify-center`}
+				className={`${styles.bg} mt-4 d-flex h-20 shadow-sm fixed w-95 z-10 rounded-full justify-center`}
 			>
 				<div className="w-full">
 					<div className="flex items-center h-20">
@@ -129,18 +129,18 @@ function Navbar() {
 
 				<Transition
 					show={isOpen}
-					enter="transition ease-out duration-100 transform"
-					enterFrom="opacity-0 scale-95"
-					enterTo="opacity-100 scale-100"
-					leave="transition ease-in duration-75 transform"
-					leaveFrom="opacity-100 scale-100"
-					leaveTo="opacity-0 scale-95"
+					enter="transition ease-out duration-100"
+					enterFrom="opacity-0"
+					enterTo="opacity-100"
+					leave="transition ease-in duration-75"
+					leaveFrom="opacity-100"
+					leaveTo="opacity-0"
 				>
 					{(ref) => (
 						<div className="md:hidden" id="mobile-menu">
 							<div
 								ref={ref}
-								className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+								className={`${styles.mobileMenu} bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3`}
 							>
 								<Link href="/">
 									<a className=" hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">

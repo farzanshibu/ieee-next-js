@@ -40,6 +40,12 @@
 	margin: 40px auto;
 	min-height: 60vh;
 }
+/* Mobile responsive styles  */
+@media only screen and (max-width: 768px) {
+	#events {
+		padding: 0;
+	}
+}
 #events ul {
 	display: flex;
 	margin-bottom: 10px;
@@ -157,6 +163,9 @@
 	background: #234f6d;
 	margin-top: 280px;
 	height: 200px;
+	bottom: 0;
+	width: 100%;
+	position: absolute;
 	background: linear-gradient(
 		0deg,
 		rgb(0 0 0 / 83%) 0%,
