@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 
 import footer from "../assets/images/mbcet.png";
 import styles from "../styles/Footer.module.css";

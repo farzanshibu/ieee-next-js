@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import logo from "/assets/images/ieeembcet.png";
 import styles from "../../styles/About.module.css";
 

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import styles from "../../styles/Why.module.css";

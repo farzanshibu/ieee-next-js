@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import styles from "../../../styles/Events.module.css";
 import eventImg from "../../../assets/images/hero.jpg";
 import Clock from "./Clock";

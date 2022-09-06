@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import styles from "../../../styles/BlogComponent.module.css";
 
 function Blog(props) {
