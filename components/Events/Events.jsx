@@ -21,7 +21,10 @@ function Events(props) {
 		setBasicActive(value);
 	};
 	return (
-		<section id={styles.events} style={{ backgroundColor: "white" }}>
+		<section
+			id={styles.events}
+			style={{ backgroundColor: "white", paddingTop: 70 }}
+		>
 			<div className="container" data-aos="fade-up">
 				<header className="sectionHeader">
 					<h3 style={{ color: "black" }}>Events</h3>

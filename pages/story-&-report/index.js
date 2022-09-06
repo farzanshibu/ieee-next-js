@@ -12,8 +12,8 @@ function index(props) {
 			<Head>
 				<title>Story & Reports | IEEE</title>
 			</Head>
-			<section id={styles.team}>
-				<div className="container min-vh-95 w-50" data-aos="fade-up">
+			<section id={styles.team} style={{ paddingTop: 70 }}>
+				<div className="container min-w-[300px] w-50" data-aos="fade-up">
 					<header className="sectionHeader">
 						<h3 style={{ color: "black" }}>Reports and Story</h3>
 						{/* <p style={{ color: "black" }}>
@@ -21,11 +21,11 @@ function index(props) {
 							long time.
 						</p> */}
 					</header>
-					<div className="table-responsive d-flex gap-5 flex-wrap justify-content-center p-5">
+					<div className="table-responsive d-flex gap-5 flex-wrap justify-content-center py-5">
 						<table className="table table-hover">
 							<thead className="table-primary">
 								<tr>
-									<th colSpan="3" className="text-center p-3">
+									<th colSpan="3" className="text-center">
 										Reports
 									</th>
 								</tr>
@@ -39,7 +39,9 @@ function index(props) {
 										<td className="text-center p-4">{report.storyName}</td>
 										<td className="text-center p-4">
 											<Link href={`/story-&-report/${report.slug.current}`}>
-												<a className="btn btn-success">Download</a>
+												<a className="btn btn-success">
+													<i className="fa-solid fa-cloud-arrow-down"></i>
+												</a>
 											</Link>
 										</td>
 									</tr>
@@ -66,7 +68,7 @@ function index(props) {
 												href={report.documentUrl}
 												className="btn btn-success px-4"
 											>
-												View
+												<i className="fa-regular fa-eye"></i>
 											</a>
 										</td>
 									</tr>

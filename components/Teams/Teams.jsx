@@ -29,7 +29,7 @@ function Teams({ cs, embs, execom, other, pes, ras, sps, sight, wie }) {
 		setBasicActive(value);
 	};
 	return (
-		<section id={styles.team}>
+		<section id={styles.team} style={{ paddingTop: 70 }}>
 			<div className="containers" data-aos="fade-up">
 				<div className="sectionHeader">
 					<h3>Team</h3>
