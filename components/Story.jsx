@@ -8,17 +8,11 @@ function Story(props) {
 				<section className="text-gray-600 body-font">
 					<div className="container mx-auto flex pt-24 2xl:gap-5 xl:gap-3 md:gap-4 lg:flex-row flex-col items-center align-items-center">
 						<div className="lg:max-w-lg lg:w-full ">
-							{/* <iframe
-								width="100%"
-								height="100%"
-								// src={props[0].youtubeUrl}
-								src="https://www.youtube.com/watch?v=WhZxDpvxMwY"
-							></iframe> */}
 							<iframe
 								className="sm:w-[320px] sm:h-[240px] md:w-[420px] md:h-[340px] lg:w-[560px] lg:h-[315px]"
 								width="560"
 								height="315"
-								src="https://www.youtube.com/embed/hMXCFdDeip0"
+								src={props[0].youtubeUrl}
 								title="YouTube video player"
 								frameBorder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
