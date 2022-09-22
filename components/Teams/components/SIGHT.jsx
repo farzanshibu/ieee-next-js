@@ -9,7 +9,7 @@ function SIGHT(props) {
 				<Team
 					key={member._id}
 					Name={member.name}
-					Image={urlFor(member.image).auto("format").url()}
+					Image={member.image ? urlFor(member.image).auto("format").url() : ""}
 					Designation={member.designation}
 					facebook={member.facebook}
 					instagram={member.instagram}

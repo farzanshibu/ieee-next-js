@@ -6,7 +6,6 @@ import {
 	MDBDropdownMenu,
 	MDBDropdownToggle,
 	MDBDropdownItem,
-	MDBDropdownLink,
 } from "mdb-react-ui-kit";
 import styles from "../styles/Navbar.module.css";
 
@@ -52,23 +51,14 @@ function Navbar() {
 											More
 										</MDBDropdownToggle>
 										<MDBDropdownMenu className={styles.dropdownMenu}>
-											<MDBDropdownItem>
-												<MDBDropdownLink></MDBDropdownLink>
+											<MDBDropdownItem link href="/gallery">
+												Gallery
 											</MDBDropdownItem>
-											<MDBDropdownItem>
-												<MDBDropdownLink href="/gallery">
-													Gallery
-												</MDBDropdownLink>
+											<MDBDropdownItem link href="/story-&-report">
+												Reports and Stories
 											</MDBDropdownItem>
-											<MDBDropdownItem>
-												<MDBDropdownLink href="/story-&-report">
-													Reports and Stories
-												</MDBDropdownLink>
-											</MDBDropdownItem>
-											<MDBDropdownItem>
-												<MDBDropdownLink href="/wallofweb">
-													Wall of Web
-												</MDBDropdownLink>
+											<MDBDropdownItem link href="/wallofweb">
+												Wall of Web
 											</MDBDropdownItem>
 										</MDBDropdownMenu>
 									</MDBDropdown>

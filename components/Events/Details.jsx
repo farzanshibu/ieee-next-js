@@ -39,7 +39,11 @@ function Details(props) {
 						<div className="flex justify-center align-center lg:max-w-lg lg:w-full ">
 							<Image
 								className="object-cover object-center rounded "
-								src={urlFor(props[0].image).auto("format").url()}
+								src={
+									props[0].image
+										? urlFor(props[0].image).auto("format").url()
+										: ""
+								}
 								alt="event"
 								width={800}
 								height={600}

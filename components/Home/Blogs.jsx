@@ -18,7 +18,11 @@ function Blogs(props) {
 									<Blog
 										Title={blog.title}
 										Author={blog.name}
-										Image={urlFor(blog.mainImage).height(200).url()}
+										Image={
+											blog.mainImage
+												? urlFor(blog.mainImage).height(200).url()
+												: ""
+										}
 										animate="100"
 									/>
 								</a>
