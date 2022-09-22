@@ -25,7 +25,11 @@ function gallery(props) {
 						{gallerys.map((gallery) => (
 							<Gallery
 								key={gallery._id}
-								Image={urlFor(gallery.image).auto("format").url()}
+								Image={
+									gallery.image
+										? urlFor(gallery.image).auto("format").url()
+										: ""
+								}
 								animate="100"
 							/>
 						))}

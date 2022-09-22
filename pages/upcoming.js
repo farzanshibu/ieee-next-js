@@ -43,7 +43,11 @@ function upcoming(props) {
 											<Event
 												Title={event.title}
 												Description={event.shortDesignation}
-												Image={urlFor(event.image).format("webp").url()}
+												Image={
+													event.image
+														? urlFor(event.image).format("webp").url()
+														: ""
+												}
 												DateandTime={event.date}
 												SpeakerName={
 													event.speakers ? event.speakers[0].speakerName : ""

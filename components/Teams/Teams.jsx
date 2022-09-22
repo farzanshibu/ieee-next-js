@@ -121,11 +121,13 @@ function Teams({ cs, embs, execom, other, pes, ras, sps, sight, wie }) {
 								<Team
 									key={other._id}
 									Name={other.name}
-									Image={urlFor(other.image).auto("format").url()}
+									Image={
+										other.image ? urlFor(other.image).auto("format").url() : ""
+									}
 									Designation={other.designation}
-									facebook={other.facebook}
-									instagram={other.instagram}
-									linkedin={other.linkedin}
+									facebook={other?.facebook}
+									instagram={other?.instagram}
+									linkedin={other?.linkedin}
 								/>
 							))}
 							<Execom {...execom} />
