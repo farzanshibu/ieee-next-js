@@ -16,14 +16,16 @@ export default function Home(props) {
 }
 export const getServerSideProps = async () => {
 	const info = await Client.fetch(`*[ _type == "home" ]`);
-	const blog = await Client.fetch(`*[_type == "blog"]{
+	const blog = await Client.fetch(`*[_type == "blog"] | order(order asc){
   _id,
   "name" : author->name,
   slug,
   title,
   mainImage
 }`);
-	const team = await Client.fetch(`*[_type == 'team' && homepage == true]`);
+	const team = await Client.fetch(
+		`*[_type == 'team' && homepage == true] | order(order asc)`,
+	);
 
 	const result = { info, team, blog };
 

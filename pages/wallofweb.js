@@ -14,7 +14,7 @@ function wallofWeb(props) {
 }
 
 export const getServerSideProps = async () => {
-	const data = await Client.fetch(`*[ _type == "wow" ]`);
+	const data = await Client.fetch(`*[ _type == "wow" ] | order(order asc)`);
 
 	return {
 		props: { ...data },

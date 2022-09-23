@@ -6,8 +6,6 @@ import urlFor from "../../components/imgtoUrl";
 import styles from "../../styles/Blog.module.css";
 
 function blogId(props) {
-	const imageUrl = "https://source.unsplash.com/random/800x600";
-
 	return (
 		<>
 			<Head>
@@ -22,30 +20,32 @@ function blogId(props) {
 						</h5>
 					</div>
 					<div className={`${styles.para} container`}>
-						<Image
-							src={
-								props[0].image
-									? urlFor(props[0].image[0]).auto("format").url()
-									: imageUrl
-							}
-							alt="image2"
-							width="500"
-							height="500"
-							layout="raw"
-						/>
-						<Image
-							src={
-								props[0].image
-									? urlFor(props[0].image[0]).auto("format").url()
-									: imageUrl
-							}
-							alt="image1"
-							width="500"
-							height="500"
-							layout="raw"
-						/>
+						{props[0].image[0] ? (
+							<Image
+								className="drop-shadow-2xl"
+								src={urlFor(props[0].image[0]).auto("format").url()}
+								alt="image1"
+								width="500"
+								height="500"
+								layout="raw"
+							/>
+						) : (
+							""
+						)}
+						{props[0].image[0] ? (
+							<Image
+								className="drop-shadow-2xl"
+								src={urlFor(props[0].image[1]).auto("format").url()}
+								alt="image2"
+								width="500"
+								height="500"
+								layout="raw"
+							/>
+						) : (
+							""
+						)}
 					</div>
-					<div className={`${styles.para} container`}>
+					<div className={`${styles.para} container text-justify`}>
 						<BlockContent blocks={props[0].body} />
 					</div>
 				</div>
