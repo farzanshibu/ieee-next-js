@@ -10,7 +10,7 @@ function Gallery(props) {
 			data-aos="zoom-in"
 			data-aos-delay={props.animate || "100"}
 		>
-			<Link href={props.Image || imageUrl}>
+			<Link href={props.Image || imageUrl} passHref>
 				<a target="_blank">
 					<Image
 						src={props.Image || imageUrl}

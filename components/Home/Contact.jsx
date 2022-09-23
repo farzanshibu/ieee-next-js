@@ -23,11 +23,13 @@ function Contact(props) {
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="mb-4 mb-lg-0">
-							<Image
-								className={styles.contactImg}
-								src={contact}
-								alt="contact"
-							/>
+							<a>
+								<Image
+									className={styles.contactImg}
+									src={contact}
+									alt="contact"
+								/>
+							</a>
 						</div>
 					</div>
 

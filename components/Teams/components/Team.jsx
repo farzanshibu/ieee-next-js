@@ -14,14 +14,16 @@ function Team(props) {
 			<div className={`${styles.row} row-eq-height justify-content-center`}>
 				<div className="col-lg-2 col-md-6">
 					<div className={styles.member}>
-						<Image
-							src={props.Image || web}
-							className="img-fluid"
-							alt="ProfileImage"
-							width="160"
-							height="160"
-							layout="raw"
-						/>
+						<a>
+							<Image
+								src={props.Image || web}
+								className="img-fluid"
+								alt="ProfileImage"
+								width="160"
+								height="160"
+								layout="raw"
+							/>
+						</a>
 						<div className={styles.memberInfo}>
 							<div className={styles.memberInfoContent}>
 								<h4>{props.Name}</h4>

@@ -38,7 +38,10 @@ function index(props) {
 												</th>
 												<td className="text-center p-4">{report.storyName}</td>
 												<td className="text-center p-4">
-													<Link href={`/story-&-report/${report.slug.current}`}>
+													<Link
+														href={`/story-&-report/${report.slug.current}`}
+														passHref
+													>
 														<a className="btn btn-success">
 															<i className="fa-solid fa-cloud-arrow-down"></i>
 														</a>

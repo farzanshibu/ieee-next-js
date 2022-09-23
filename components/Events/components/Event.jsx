@@ -25,6 +25,7 @@ function Event(props) {
 			data-aos-delay={props.animate || "100"}
 		>
 			<Image className="card-img d-none" src={eventImg} alt="Events" />
+
 			<div
 				className={`${styles.cardImgOverlay} d-flex flex-column align-items-center justify-content-center`}
 			>

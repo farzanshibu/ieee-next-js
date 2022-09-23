@@ -6,7 +6,9 @@ function Spotlight() {
 		<section id={styles.intro} className="clearfix">
 			<div className="container" data-aos="fade-up">
 				{/* <div className={styles.introImg} data-aos="zoom-out" data-aos-delay="200">
-					<Image src={Hero} alt="hero" className="img-fluid" />
+					<a>
+						<Image src={Hero} alt="hero" className="img-fluid" />
+					</a>
 				</div> */}
 
 				<div
@@ -20,10 +22,10 @@ function Spotlight() {
 						domain
 					</h2>
 					<div>
-						<Link href="/upcoming">
+						<Link href="/upcoming" passHref>
 							<a className={styles.btnGetStarted}>Upcoming Event</a>
 						</Link>
-						<Link href="/story-&-report">
+						<Link href="/story-&-report" passHref>
 							<a className={styles.btnServices}>Sneak Peek</a>
 						</Link>
 					</div>
