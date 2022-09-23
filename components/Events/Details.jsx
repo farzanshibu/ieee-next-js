@@ -29,7 +29,6 @@ function Details(props) {
 	let eventDate = formatDate(new Date(props[0]?.date));
 	let eventTime = formatTime(new Date(props[0]?.date));
 	let eventLastDate = formatDate(new Date(props[0]?.date3));
-	const imageUrl = "https://source.unsplash.com/random/800x600";
 
 	return (
 		<section id={styles.team}>

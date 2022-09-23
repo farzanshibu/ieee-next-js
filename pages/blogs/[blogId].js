@@ -21,30 +21,28 @@ function blogId(props) {
 					</div>
 					<div className={`${styles.para} container`}>
 						{props[0].image[0] ? (
-							<a>
-								<Image
-									className="drop-shadow-2xl"
-									src={urlFor(props[0].image[0]).auto("format").url()}
-									alt="image1"
-									width="500"
-									height="500"
-									layout="raw"
-								/>
-							</a>
+							<Image
+								className="drop-shadow-2xl w-auto h-auto"
+								src={urlFor(props[0].image[0]).auto("format").url()}
+								alt="image1"
+								width="500"
+								height="500"
+								layout="raw"
+								loading="lazy"
+							/>
 						) : (
 							""
 						)}
 						{props[0].image[0] ? (
-							<a>
-								<Image
-									className="drop-shadow-2xl"
-									src={urlFor(props[0].image[1]).auto("format").url()}
-									alt="image2"
-									width="500"
-									height="500"
-									layout="raw"
-								/>
-							</a>
+							<Image
+								className="drop-shadow-2xl w-auto h-auto"
+								src={urlFor(props[0].image[1]).auto("format").url()}
+								alt="image2"
+								width="500"
+								height="500"
+								layout="raw"
+								loading="lazy"
+							/>
 						) : (
 							""
 						)}
