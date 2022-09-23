@@ -6,6 +6,8 @@ import styles from "../../styles/Team.module.css";
 
 function index(props) {
 	const data = Object.values(props);
+	var count1 = 0;
+	var count2 = 0;
 
 	return (
 		<>
@@ -16,10 +18,6 @@ function index(props) {
 				<div className="container min-w-[300px] w-50" data-aos="fade-up">
 					<header className="sectionHeader">
 						<h3 style={{ color: "black" }}>Reports and Story</h3>
-						{/* <p style={{ color: "black" }}>
-							Here is a snapshot of various events, which can be cherished for a
-							long time.
-						</p> */}
 					</header>
 					<div className="table-responsive d-flex gap-5 flex-wrap justify-content-center py-5">
 						<table className="table table-hover">
@@ -31,19 +29,25 @@ function index(props) {
 								</tr>
 							</thead>
 							<tbody>
-								{data.map((report, index) => (
+								{data.map((report) => (
 									<tr key={report._id}>
-										<th scope="row" className="text-center p-4">
-											{index + 1}
-										</th>
-										<td className="text-center p-4">{report.storyName}</td>
-										<td className="text-center p-4">
-											<Link href={`/story-&-report/${report.slug.current}`}>
-												<a className="btn btn-success">
-													<i className="fa-solid fa-cloud-arrow-down"></i>
-												</a>
-											</Link>
-										</td>
+										{report.storyName ? (
+											<>
+												<th scope="row" className="text-center p-4">
+													{(count1 = count1 + 1)}
+												</th>
+												<td className="text-center p-4">{report.storyName}</td>
+												<td className="text-center p-4">
+													<Link href={`/story-&-report/${report.slug.current}`}>
+														<a className="btn btn-success">
+															<i className="fa-solid fa-cloud-arrow-down"></i>
+														</a>
+													</Link>
+												</td>
+											</>
+										) : (
+											""
+										)}
 									</tr>
 								))}
 							</tbody>
@@ -57,20 +61,26 @@ function index(props) {
 								</tr>
 							</thead>
 							<tbody>
-								{data.map((report, index) => (
+								{data.map((report) => (
 									<tr key={report._id}>
-										<th scope="row" className="text-center p-4">
-											{index + 1}
-										</th>
-										<td className="text-center p-4">{report.reportName}</td>
-										<td className="text-center p-4">
-											<a
-												href={report.documentUrl}
-												className="btn btn-success px-4"
-											>
-												<i className="fa-regular fa-eye"></i>
-											</a>
-										</td>
+										{report.reportName ? (
+											<>
+												<th scope="row" className="text-center p-4">
+													{(count2 = count2 + 1)}
+												</th>
+												<td className="text-center p-4">{report.reportName}</td>
+												<td className="text-center p-4">
+													<a
+														href={report.documentUrl}
+														className="btn btn-success px-4"
+													>
+														<i className="fa-regular fa-eye"></i>
+													</a>
+												</td>
+											</>
+										) : (
+											""
+										)}
 									</tr>
 								))}
 							</tbody>
@@ -83,7 +93,9 @@ function index(props) {
 }
 
 export const getServerSideProps = async () => {
-	const data = await Client.fetch(`*[ _type == "reportandstory" ]`);
+	const data = await Client.fetch(
+		`*[ _type == "reportandstory" ] | order(order asc)`,
+	);
 
 	return {
 		props: { ...data },

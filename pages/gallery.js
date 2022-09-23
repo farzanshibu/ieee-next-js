@@ -41,7 +41,9 @@ function gallery(props) {
 }
 
 export const getServerSideProps = async () => {
-	const gallery = await Client.fetch(`*[ _type == "gallery" ]`);
+	const gallery = await Client.fetch(
+		`*[ _type == "gallery" ] | order(order asc)`,
+	);
 
 	return {
 		props: { ...gallery },
