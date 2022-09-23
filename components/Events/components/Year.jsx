@@ -7,10 +7,10 @@ function Year(props) {
 	return (
 		<div className="product">
 			<div className="row w-100">
-				{events.map((event) => (
-					<div key={event._id} className="col-md-4 p-2">
+				{events.map((event, index) => (
+					<div key={index} className="col-md-4 p-2">
 						{event.slug?.current ? (
-							<Link href={`/events/${event.slug?.current}`}>
+							<Link href={`/events/${event.slug?.current}`} passHref>
 								<a>
 									<Event
 										Title={event?.title}

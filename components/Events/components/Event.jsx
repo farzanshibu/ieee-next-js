@@ -4,7 +4,6 @@ import eventImg from "../../../assets/images/hero.jpg";
 import Clock from "./Clock";
 
 function Event(props) {
-	const imageUrl = "https://source.unsplash.com/random/800x600";
 	let d = new Date(props.DateandTime);
 	const options = {
 		day: "numeric",
@@ -18,13 +17,14 @@ function Event(props) {
 		<div
 			className={`${styles.card} ${styles.cardHasBg} text-white click-col`}
 			style={{
-				background: `url(${props.Image || imageUrl}) no-repeat`,
+				background: `url(${props.Image}) no-repeat`,
 				backgroundSize: "cover",
 			}}
 			data-aos="zoom-in"
 			data-aos-delay={props.animate || "100"}
 		>
 			<Image className="card-img d-none" src={eventImg} alt="Events" />
+
 			<div
 				className={`${styles.cardImgOverlay} d-flex flex-column align-items-center justify-content-center`}
 			>

@@ -31,6 +31,7 @@ function gallery(props) {
 										: ""
 								}
 								animate="100"
+								loading="lazy"
 							/>
 						))}
 					</div>

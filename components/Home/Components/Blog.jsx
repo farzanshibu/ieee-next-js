@@ -2,7 +2,6 @@ import Image from "next/future/image";
 import styles from "../../../styles/BlogComponent.module.css";
 
 function Blog(props) {
-	let poster = "https://source.unsplash.com/random/800x600";
 	return (
 		<div className={styles.movieStack}>
 			<div
@@ -15,8 +14,9 @@ function Blog(props) {
 					layout="raw"
 					width={200}
 					height={300}
-					src={props.Image || poster}
-					className={styles.moviePoster}
+					src={props.Image}
+					className={`${styles.moviePoster} w-auto h-auto`}
+					loading="lazy"
 				/>
 				<h1 className={styles.movieTitle}> {props.Title} </h1>
 			</div>

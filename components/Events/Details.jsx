@@ -29,7 +29,6 @@ function Details(props) {
 	let eventDate = formatDate(new Date(props[0]?.date));
 	let eventTime = formatTime(new Date(props[0]?.date));
 	let eventLastDate = formatDate(new Date(props[0]?.date3));
-	const imageUrl = "https://source.unsplash.com/random/800x600";
 
 	return (
 		<section id={styles.team}>
@@ -37,18 +36,20 @@ function Details(props) {
 				<section className="text-gray-600 body-font">
 					<div className="container mx-auto flex px-5 py-24 align-center md:flex-row flex-col items-center gap-4">
 						<div className="flex justify-center align-center lg:max-w-lg lg:w-full ">
-							<Image
-								className="object-cover object-center rounded "
-								src={
-									props[0].image
-										? urlFor(props[0].image).auto("format").url()
-										: ""
-								}
-								alt="event"
-								width={800}
-								height={600}
-								layout="raw"
-							/>
+							<a>
+								<Image
+									className="object-cover object-center rounded "
+									src={
+										props[0].image
+											? urlFor(props[0].image).auto("format").url()
+											: ""
+									}
+									alt="event"
+									width={800}
+									height={600}
+									layout="raw"
+								/>
+							</a>
 						</div>
 						<div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center gap-3">
 							<h1 className="title-font sm:text-4xl text-3xl mb-3 font-medium text-gray-900">

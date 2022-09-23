@@ -38,7 +38,7 @@ function upcoming(props) {
 						<div className="row w-100">
 							{events.map((event) => (
 								<div key={event._id} className="col-md-4 p-2">
-									<Link href={`/events/${event.slug.current}`}>
+									<Link href={`/events/${event.slug.current}`} passHref>
 										<a>
 											<Event
 												Title={event.title}

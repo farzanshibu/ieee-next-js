@@ -11,7 +11,9 @@ function Whyus(props) {
 			<div className="container" data-aos="fade-up">
 				<header className={styles.sectionHeader}>
 					<p className="d-flex justify-content-center">
-						<Image src={logo} alt="simple-logo" />
+						<a>
+							<Image src={logo} alt="simple-logo" />
+						</a>
 					</p>
 					<h3>Why join us?</h3>
 					<p>

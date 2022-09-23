@@ -15,7 +15,7 @@ function TeamPage(props) {
 					<p>
 						IEEE MBCET is made up of a lof enthusiastic individuals. Meet some
 						of the frontier people of IEEE MBCET. Here is the complete
-						<Link href="/team">
+						<Link href="/team" passHref>
 							<a className={styles.teamHl}>Team</a>
 						</Link>
 					</p>

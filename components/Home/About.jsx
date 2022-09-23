@@ -75,13 +75,15 @@ function About() {
 						className={`col-lg-6 order-lg-2 ${styles.background}`}
 						data-aos="zoom-in"
 					>
-						<Image
-							src={logo}
-							className="img-fluid"
-							alt="logo"
-							width="470"
-							height="355"
-						/>
+						<a>
+							<Image
+								src={logo}
+								className="img-fluid"
+								alt="logo"
+								width="470"
+								height="355"
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

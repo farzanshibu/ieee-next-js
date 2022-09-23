@@ -10,15 +10,17 @@ function Chapter(props) {
 			data-aos-delay={props.animate || "100"}
 		>
 			<div className={styles.clientLogo}>
-				<Link href={props.Link}>
-					<Image
-						src={props.Image}
-						width="176"
-						height="100"
-						layout="raw"
-						className="img-fluid"
-						alt="ourChapter"
-					/>
+				<Link href={props.Link} passHref>
+					<a>
+						<Image
+							src={props.Image}
+							width="176"
+							height="100"
+							layout="raw"
+							className={`${styles.imagess}	img-fluid`}
+							alt={props.Link}
+						/>
+					</a>
 				</Link>
 			</div>
 		</div>
