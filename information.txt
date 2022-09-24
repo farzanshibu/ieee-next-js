@@ -1,0 +1,4 @@
+backend       -- sanity.io
+contact form  -- emailjs.com
+              -- notion.com 
+hosting       -- netlify.com
