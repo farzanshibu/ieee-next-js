@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import contact from "/assets/images/contatct.png";
 import styles from "../../styles/Contact.module.css";
+import TextField from "@mui/material/TextField";
 
 function Contact(props) {
 	const {
@@ -35,13 +36,13 @@ function Contact(props) {
 
 					<div className="col-lg-6">
 						<div className="row">
-							<div className={`${styles.info} col-md-4`}>
+							<div className={`${styles.info} w-2/4`}>
 								<i className="fa-solid fa-at"></i>
 								<p>
 									<a href="mailto:ieeesb@mbcet.ac.in">ieeesb@mbcet.ac.in</a>
 								</p>
 							</div>
-							<div className={`${styles.info} col-md-3`}>
+							<div className={`${styles.info} w-2/4`}>
 								<i className="fa-solid fa-mobile"></i>
 								<p>
 									<a href={` tel: +91${props[0].phoneNumber}`}>
@@ -101,10 +102,15 @@ function Contact(props) {
 							>
 								<div className="row justify-content-center align-items-center">
 									<div className="form-group col-lg-6">
-										<input
+										<TextField
+											id="outlined-size-normal"
+											label="Name"
+											variant="outlined"
 											type="text"
-											className="form-control"
+											fullWidth
 											placeholder="Your Name"
+											size="small"
+											error={errors.name}
 											{...register("name", { required: true, minLength: 2 })}
 										/>
 										{errors.name && errors.name.type === "required" && (
@@ -119,10 +125,15 @@ function Contact(props) {
 										)}
 									</div>
 									<div className="form-group col-lg-6 mt-3 mt-lg-0">
-										<input
+										<TextField
+											id="outlined-size-normal"
+											label="Email Address"
+											variant="outlined"
 											type="email"
-											className="form-control"
-											placeholder="Your Email"
+											placeholder="Email@exaple.com"
+											size="small"
+											fullWidth
+											error={errors.email && errors.email.type === "required"}
 											{...register("email", { required: true })}
 										/>
 										{errors.email && errors.email.type === "required" && (
@@ -133,10 +144,14 @@ function Contact(props) {
 									</div>
 								</div>
 								<div className="form-group mt-3">
-									<input
+									<TextField
+										id="outlined-size-normal"
+										label="Subject"
+										variant="outlined"
 										type="text"
-										className="form-control"
-										placeholder="Subject"
+										fullWidth
+										size="small"
+										error={errors.subject}
 										{...register("subject", { required: true, minLength: 4 })}
 									/>
 									{errors.subject && (
@@ -150,13 +165,18 @@ function Contact(props) {
 										</span>
 									)}
 								</div>
-								<div className="form-group mt-3">
-									<textarea
-										className="form-control"
-										rows="5"
-										placeholder="Message"
+								<div className="form-group mt-4">
+									<TextField
+										id="outlined-textarea"
+										label="Message"
+										placeholder="Placeholder"
+										fullWidth
+										size="small"
+										multiline
+										minRows="5"
+										error={errors.message}
 										{...register("message", { required: true, minLength: 6 })}
-									></textarea>
+									/>
 									{errors.message && (
 										<span className={styles.validate}>
 											This field is required
