@@ -1,10 +1,12 @@
-import Image from "next/future/image";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import contact from "/assets/images/contatct.png";
+import Image from "next/future/image";
 import styles from "../../styles/Contact.module.css";
 import TextField from "@mui/material/TextField";
+import emailjs from "@emailjs/browser";
+
+import "react-toastify/dist/ReactToastify.css";
+import contact from "/assets/images/contatct.png";
 
 function Contact(props) {
 	const {
@@ -55,47 +57,44 @@ function Contact(props) {
 						<div className="form pt-3">
 							<form
 								method="POST"
-								autoComplete="off"
 								onSubmit={handleSubmit((data) => {
-									console.log(data);
-									fetch("https://formspree.io/f/xeqndgek", {
-										method: "POST",
-										body: JSON.stringify(data),
-										headers: {
-											Accept: "application/json",
-										},
-									});
-									fetch("/api/contact", {
-										method: "post",
-										body: JSON.stringify(data),
-									})
-										.then((response) => response.json())
-										.then((data) => {
-											console.log("Success:", data);
-											toast.success(" Successfully", {
-												position: "bottom-right",
-												autoClose: 5000,
-												hideProgressBar: false,
-												closeOnClick: true,
-												pauseOnHover: true,
-												draggable: true,
-												progress: undefined,
-												theme: "colored",
-											});
+									emailjs.send(
+										process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
+										process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
+										data,
+										process.env.NEXT_PUBLIC_YOUR_PUBLIC_KEY,
+									) &&
+										fetch("/api/contact", {
+											method: "post",
+											body: JSON.stringify(data),
 										})
-										.catch((error) => {
-											console.error("Error:", error);
-											toast.error(" Something went wrong", {
-												position: "bottom-right",
-												theme: "colored",
-												autoClose: 5000,
-												hideProgressBar: false,
-												closeOnClick: true,
-												pauseOnHover: true,
-												draggable: true,
-												progress: undefined,
+											.then((response) => response.json())
+											.then((data) => {
+												console.log("Success:", data);
+												toast.success(" Successfully", {
+													position: "bottom-right",
+													autoClose: 5000,
+													hideProgressBar: false,
+													closeOnClick: true,
+													pauseOnHover: true,
+													draggable: true,
+													progress: undefined,
+													theme: "colored",
+												});
+											})
+											.catch((error) => {
+												console.error("Error:", error);
+												toast.error(" Something went wrong", {
+													position: "bottom-right",
+													theme: "colored",
+													autoClose: 5000,
+													hideProgressBar: false,
+													closeOnClick: true,
+													pauseOnHover: true,
+													draggable: true,
+													progress: undefined,
+												});
 											});
-										});
 									reset();
 								})}
 								className={styles.phpEmailForm}
@@ -103,6 +102,7 @@ function Contact(props) {
 								<div className="row justify-content-center align-items-center">
 									<div className="form-group col-lg-6">
 										<TextField
+											autoComplete="new-password"
 											id="outlined-size-normal"
 											label="Name"
 											variant="outlined"
@@ -126,6 +126,7 @@ function Contact(props) {
 									</div>
 									<div className="form-group col-lg-6 mt-3 mt-lg-0">
 										<TextField
+											autoComplete="new-password"
 											id="outlined-size-normal"
 											label="Email Address"
 											variant="outlined"
@@ -145,6 +146,7 @@ function Contact(props) {
 								</div>
 								<div className="form-group mt-3">
 									<TextField
+										autoComplete="off"
 										id="outlined-size-normal"
 										label="Subject"
 										variant="outlined"
