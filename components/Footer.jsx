@@ -53,15 +53,25 @@ function Footer(props) {
 						<div className={`${styles.footerContact} col-lg-3 col-md-6`}>
 							<h4>Contact Us</h4>
 							<p>
-								MBCET <br />
-								Nalanchira PO, 695015
+								<a
+									href="https://goo.gl/maps/asE7ZBhXtHXRCYco8"
+									style={{ color: "white" }}
+								>
+									Mar Baselios College of Engineering and Technology, <br />
+									Nalanchira PO, Trivandrum,
+									<br />
+									Kerala, India - 695 015
+								</a>
 								<br />
-								Trivandrum, Kerala, India
+								<strong>Phone : </strong>
+								<a
+									href={`tel:${props[0].phoneNumber}`}
+									style={{ color: "white" }}
+								>
+									+91 {props[0].phoneNumber} ( {props[0].name})
+								</a>
 								<br />
-								<strong>Phone:</strong> +91 {props[0].phoneNumber} ({" "}
-								{props[0].name})
-								<br />
-								<strong>Email:</strong>
+								<strong>Email : </strong>
 								<a href="mailto:ieeesb@mbcet.ac.in" style={{ color: "white" }}>
 									ieeesb@mbcet.ac.in
 								</a>
