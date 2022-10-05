@@ -1,14 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import styles from "../styles/Achievements.module.css";
 
 function AnimatedIcon(props) {
 	return (
-		<div
-			className="flex items-center justify-center"
-			style={{
-				height: "60px",
-			}}
-		>
+		<div className={`flex items-center justify-center ${styles.centerfix}`}>
 			<Image
 				src={props.icon}
 				alt="tropy"

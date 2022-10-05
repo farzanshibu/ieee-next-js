@@ -2,3 +2,8 @@
 	box-shadow: 0 0 0 4px #102327, inset 0 2px 0 rgb(0 0 0 / 8%),
 		0 3px 0 4px rgb(0 0 0 / 5%) !important;
 }
+@media (min-width: 1170px) {
+	.centerfix {
+		height: 60px;
+	}
+}
