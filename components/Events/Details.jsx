@@ -24,11 +24,11 @@ function formatDate(eventDate, prefix = "") {
 }
 
 function Details(props) {
-	let d = new Date(props[0]?.lastDate);
+	let d = new Date(props[1]?.lastDate);
 	let time = Date.parse(d) - Date.parse(new Date());
-	let eventDate = formatDate(new Date(props[0]?.date));
-	let eventTime = formatTime(new Date(props[0]?.date));
-	let eventLastDate = formatDate(new Date(props[0]?.date3));
+	let eventDate = formatDate(new Date(props[1]?.date));
+	let eventTime = formatTime(new Date(props[1]?.date));
+	let eventLastDate = formatDate(new Date(props[1]?.date3));
 
 	return (
 		<section id={styles.team}>
@@ -40,8 +40,8 @@ function Details(props) {
 								<Image
 									className="object-cover object-center rounded "
 									src={
-										props[0].image
-											? urlFor(props[0].image).auto("format").url()
+										props[1].image
+											? urlFor(props[1].image).auto("format").url()
 											: ""
 									}
 									alt="event"
@@ -53,7 +53,7 @@ function Details(props) {
 						</div>
 						<div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center gap-3">
 							<h1 className="title-font sm:text-4xl text-3xl mb-3 font-medium text-gray-900">
-								{props[0]?.title}
+								{props[1]?.title}
 							</h1>
 							<div
 								className="mb-8 leading-relaxed"
@@ -61,15 +61,15 @@ function Details(props) {
 							>
 								<em>
 									<BlockContent
-										blocks={props[0].description ? props[0].description : ""}
+										blocks={props[1].description ? props[1].description : ""}
 									/>
 								</em>
 							</div>
 							<div>
-								{props[0].speakers ? (
+								{props[1].speakers ? (
 									<p style={{ textAlign: "left", margin: 0, padding: 0 }}>
 										Speakers :
-										{props[0].speakers.map((speaker, index) => (
+										{props[1].speakers.map((speaker, index) => (
 											<strong key={index}>
 												{" "}
 												{speaker.speakerName}
@@ -80,10 +80,10 @@ function Details(props) {
 								) : (
 									""
 								)}
-								{props[0].contacts ? (
+								{props[1].contacts ? (
 									<p style={{ textAlign: "left", margin: 0, padding: 0 }}>
 										Contacts :
-										{props[0].contacts.map((speaker, index) => (
+										{props[1].contacts.map((speaker, index) => (
 											<strong key={index}>
 												{" "}
 												{speaker.contactName}
@@ -96,18 +96,18 @@ function Details(props) {
 								)}
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
-										{props[0].date ? eventDate : ""}
-										{props[0].date3 ? " - " + eventLastDate : ""}
-										{props[0].date ? ", " + eventTime : ""}
+										{props[1].date ? eventDate : ""}
+										{props[1].date3 ? " - " + eventLastDate : ""}
+										{props[1].date ? ", " + eventTime : ""}
 									</strong>
 								</p>
 							</div>
 
 							{time > "0" ? <button>Add to event</button> : ""}
-							{props[0].rule ? (
+							{props[1].rule ? (
 								<div>
 									<strong>Rules</strong>
-									<BlockContent blocks={props[0].rule ? props[0].rule : ""} />
+									<BlockContent blocks={props[1].rule ? props[1].rule : ""} />
 								</div>
 							) : (
 								""
@@ -116,7 +116,7 @@ function Details(props) {
 							<div className="flex justify-center">
 								<a
 									id="address"
-									href={time < "0" ? props[0].knowMore : props[0].formLink}
+									href={time < "0" ? props[1].knowMore : props[1].formLink}
 								>
 									<button
 										id="btnval"
