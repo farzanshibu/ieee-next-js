@@ -13,7 +13,7 @@ import urlFor from "../Utility/imgtoUrl";
 import { EffectCards } from "swiper";
 import Image from "next/future/image";
 
-function flipbook(props) {
+function Flipbook(props) {
 	const gallerys = Object.values(props);
 	return (
 		<>
@@ -88,4 +88,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default flipbook;
+export default Flipbook;

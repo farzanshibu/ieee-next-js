@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Client from "../client";
 
-export default function fiveohoh({ info }) {
+export default function Fiveohoh({ info }) {
 	return (
 		<>
 			<Head>

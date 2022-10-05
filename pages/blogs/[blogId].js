@@ -5,7 +5,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import urlFor from "../../Utility/imgtoUrl";
 import styles from "../../styles/Blog.module.css";
 
-function blogId(props) {
+function BlogId(props) {
 	return (
 		<>
 			<Head>
@@ -69,4 +69,4 @@ export const getServerSideProps = async (context) => {
 	};
 };
 
-export default blogId;
+export default BlogId;

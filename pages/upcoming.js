@@ -17,7 +17,7 @@ function formatDate(date) {
 	return [year, month, day].join("-");
 }
 
-function upcoming(props) {
+function Upcoming(props) {
 	const events = Object.values(props);
 	return (
 		<>
@@ -78,4 +78,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default upcoming;
+export default Upcoming;

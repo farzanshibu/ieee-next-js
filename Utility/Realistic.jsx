@@ -20,7 +20,7 @@ export default function Realistic() {
 		refAnimationInstance.current &&
 			refAnimationInstance.current({
 				...opts,
-				origin: { y: 0.5 },
+				origin: { y: 0.5, zIndex: 1500 },
 				particleCount: Math.floor(200 * particleRatio),
 			});
 	}, []);

@@ -9,7 +9,7 @@ function getAnimationSettings(angle, originX) {
 		particleCount: 3,
 		angle,
 		spread: 55,
-		origin: { x: originX },
+		origin: { x: originX, zIndex: 1500 },
 		colors: colors,
 	};
 }
