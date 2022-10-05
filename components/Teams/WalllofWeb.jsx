@@ -1,4 +1,4 @@
-import urlFor from "../imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import Team from "./components/Team";
 import styles from "../../styles/Team.module.css";
 

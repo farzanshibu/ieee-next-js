@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Events.module.css";
-import urlFor from "../components/imgtoUrl";
+import urlFor from "../Utility/imgtoUrl";
 import Client from "../client";
 import Event from "../components/Events/components/Event";
 
@@ -17,7 +17,7 @@ function formatDate(date) {
 	return [year, month, day].join("-");
 }
 
-function upcoming(props) {
+function Upcoming(props) {
 	const events = Object.values(props);
 	return (
 		<>
@@ -78,4 +78,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default upcoming;
+export default Upcoming;

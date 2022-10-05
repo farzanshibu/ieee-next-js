@@ -4,7 +4,7 @@ import Client from "../../client";
 
 import styles from "../../styles/Team.module.css";
 
-function index(props) {
+function StoryandReport(props) {
 	const data = Object.values(props);
 	var count1 = 0;
 	var count2 = 0;
@@ -105,4 +105,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default index;
+export default StoryandReport;

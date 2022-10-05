@@ -2,7 +2,7 @@ import Head from "next/head";
 import Teams from "../components/Teams/Teams";
 import Client from "../client";
 
-function team(props) {
+function Team(props) {
 	return (
 		<>
 			<Head>
@@ -20,4 +20,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default team;
+export default Team;

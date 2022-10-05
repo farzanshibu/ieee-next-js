@@ -2,7 +2,7 @@ import Head from "next/head";
 import Client from "../../client";
 import Details from "../../components/Events/Details";
 
-function teamId(props) {
+function TeamId(props) {
 	return (
 		<>
 			<Head>
@@ -22,4 +22,4 @@ export const getServerSideProps = async (context) => {
 	};
 };
 
-export default teamId;
+export default TeamId;

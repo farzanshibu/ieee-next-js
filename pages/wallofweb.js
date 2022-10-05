@@ -2,7 +2,7 @@ import Head from "next/head";
 import Client from "../client";
 import WalllofWeb from "../components/Teams/WalllofWeb";
 
-function wallofWeb(props) {
+function WallofWeb(props) {
 	return (
 		<>
 			<Head>
@@ -21,4 +21,4 @@ export const getServerSideProps = async () => {
 	};
 };
 
-export default wallofWeb;
+export default WallofWeb;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import urlFor from "../imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import Blog from "./Components/Blog";
 import styles from "../../styles/Blog.module.css";
 

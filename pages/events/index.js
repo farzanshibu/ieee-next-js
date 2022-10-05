@@ -3,7 +3,7 @@ import Head from "next/head";
 import Client from "../../client";
 import Events from "../../components/Events/Events";
 
-function events(props) {
+function Event(props) {
 	return (
 		<>
 			<Head>
@@ -20,4 +20,4 @@ export const getServerSideProps = async () => {
 		props: { ...events },
 	};
 };
-export default events;
+export default Event;

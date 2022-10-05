@@ -2,10 +2,10 @@ import Head from "next/head";
 import Image from "next/future/image";
 import Client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import urlFor from "../../components/imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import styles from "../../styles/Blog.module.css";
 
-function blogId(props) {
+function BlogId(props) {
 	return (
 		<>
 			<Head>
@@ -69,4 +69,4 @@ export const getServerSideProps = async (context) => {
 	};
 };
 
-export default blogId;
+export default BlogId;
