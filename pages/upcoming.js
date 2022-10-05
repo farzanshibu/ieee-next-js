@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Events.module.css";
-import urlFor from "../components/imgtoUrl";
+import urlFor from "../Utility/imgtoUrl";
 import Client from "../client";
 import Event from "../components/Events/components/Event";
 

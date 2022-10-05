@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import urlFor from "../imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import Team from "../Teams/components/Team";
 import styles from "../../styles/Team.module.css";
 

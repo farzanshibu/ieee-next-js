@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Gallery from "../components/Gallery";
 import Client from "../client";
-import urlFor from "../components/imgtoUrl";
+import urlFor from "../Utility/imgtoUrl";
 import styles from "../styles/Gallery.module.css";
 
 function gallery(props) {

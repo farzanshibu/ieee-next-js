@@ -7,7 +7,7 @@ import {
 	MDBTabsContent,
 	MDBTabsPane,
 } from "mdb-react-ui-kit";
-import urlFor from "../imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import Team from "./components/Team";
 
 function Teams(dataset) {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Event from "./Event";
-import urlFor from "../../imgtoUrl";
+import urlFor from "../../../Utility/imgtoUrl";
 
 function Year(props) {
 	const events = Object.values(props);

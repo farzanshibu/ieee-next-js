@@ -3,8 +3,6 @@ import styles from "../../../styles/Team.module.css";
 import Social from "./Social";
 
 function Team(props) {
-	const web = "https://source.unsplash.com/random/800x600";
-
 	return (
 		<div
 			className={styles.itemBox}
@@ -16,7 +14,7 @@ function Team(props) {
 					<div className={styles.member}>
 						<a>
 							<Image
-								src={props.Image || web}
+								src={props.Image}
 								className="img-fluid"
 								alt="ProfileImage"
 								width="160"

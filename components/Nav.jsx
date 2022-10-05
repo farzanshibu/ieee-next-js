@@ -40,6 +40,11 @@ function Navbar() {
 											About
 										</a>
 									</Link>
+									<Link href="/achievements" passHref>
+										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-semibold hover:font-black">
+											Achievements
+										</a>
+									</Link>
 									<Link href="/team" passHref>
 										<a className=" hover:bg-blue-300 text-black hover:text-white px-3 py-2 rounded-md text-sm font-semibold hover:font-black">
 											Team
@@ -149,6 +154,11 @@ function Navbar() {
 									</a>
 								</Link>
 
+								<Link href="/achievements" passHref>
+									<a className=" hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+										Achievements
+									</a>
+								</Link>
 								<Link href="/team" passHref>
 									<a className=" hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 										Team
@@ -159,7 +169,7 @@ function Navbar() {
 										Events
 									</a>
 								</Link>
-								<Link href="/gallery" passHref>
+								<Link href="/flipbook" passHref>
 									<a className=" hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 										Gallery
 									</a>

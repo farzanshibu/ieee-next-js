@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 import BlockContent from "@sanity/block-content-to-react";
-import urlFor from "../imgtoUrl";
+import urlFor from "../../Utility/imgtoUrl";
 import styles from "../../styles/Team.module.css";
 import AddToCal from "./components/AddToCal";
 

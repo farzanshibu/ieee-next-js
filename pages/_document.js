@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 export default class CustomDocument extends Document {
 	render() {

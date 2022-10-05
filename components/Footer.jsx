@@ -68,7 +68,7 @@ function Footer(props) {
 									href={`tel:${props[0].phoneNumber}`}
 									style={{ color: "white" }}
 								>
-									+91 {props[0].phoneNumber} ( {props[0].name})
+									+91 {props[0].phoneNumber} ( {props[0].name} )
 								</a>
 								<br />
 								<strong>Email : </strong>
