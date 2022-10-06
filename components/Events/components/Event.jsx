@@ -29,9 +29,6 @@ function Event(props) {
 				className={`${styles.cardImgOverlay} d-flex flex-column align-items-center justify-content-center`}
 			>
 				<div className={styles.cardBody}>
-					<small className={`${styles.cardMeta} mb-2`}>
-						{props.Description}
-					</small>
 					<h4 className="card-title text-2xl font-bold mt-0">{props.Title}</h4>
 					<small id="event-box">
 						<i className="fa-solid fa-alarm-clock" style={{ fontSize: "12px" }}>

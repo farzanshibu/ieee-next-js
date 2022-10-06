@@ -13,7 +13,11 @@ const options = {
 
 function formatTime(eventTime, prefix = "") {
 	return typeof eventTime == "object"
-		? prefix + eventTime.toLocaleTimeString()
+		? prefix +
+				eventTime.toLocaleTimeString("en-US", {
+					hour: "2-digit",
+					minute: "2-digit",
+				})
 		: "";
 }
 
@@ -68,12 +72,15 @@ function Details(props) {
 							<div>
 								{props[1].speakers ? (
 									<p style={{ textAlign: "left", margin: 0, padding: 0 }}>
-										Speakers :
+										Speakers :<br />
 										{props[1].speakers.map((speaker, index) => (
 											<strong key={index}>
 												{" "}
 												{speaker.speakerName}
-												<span>, {speaker.speakerDesignation}</span>
+												<span className="font-light">
+													, {speaker.speakerDesignation}
+												</span>
+												<br />
 											</strong>
 										))}
 									</p>
@@ -82,18 +89,22 @@ function Details(props) {
 								)}
 								{props[1].contacts ? (
 									<p style={{ textAlign: "left", margin: 0, padding: 0 }}>
-										Contacts :
+										Contacts :<br />
 										{props[1].contacts.map((speaker, index) => (
 											<strong key={index}>
 												{" "}
 												{speaker.contactName}
-												<span>, {speaker.contactNumber}</span>
+												<span className="font-light">
+													, {speaker.contactNumber}
+												</span>
+												<br />
 											</strong>
 										))}
 									</p>
 								) : (
 									""
 								)}
+								<br />
 								<p style={{ textAlign: "left", fontSize: 14 }}>
 									<strong>
 										{props[1].date ? eventDate : ""}

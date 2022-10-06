@@ -14,7 +14,6 @@ function Year(props) {
 								<a>
 									<Event
 										Title={event?.title}
-										Description={event?.shortDesignation}
 										Image={
 											event.image
 												? urlFor(event.image).format("webp").url()

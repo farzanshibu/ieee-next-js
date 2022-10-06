@@ -15,7 +15,7 @@ function Event(props) {
 }
 
 export const getServerSideProps = async () => {
-	const events = await Client.fetch(`*[_type == "events"] | order(title desc)`);
+	const events = await Client.fetch(`*[_type == "events"] | order(year desc)`);
 	return {
 		props: { ...events },
 	};
