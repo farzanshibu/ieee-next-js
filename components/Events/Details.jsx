@@ -61,7 +61,7 @@ function Details(props) {
 							</h1>
 							<div
 								className="mb-8 leading-relaxed"
-								style={{ textAlign: "left" }}
+								style={{ textAlign: "justify" }}
 							>
 								<em>
 									<BlockContent
@@ -124,19 +124,22 @@ function Details(props) {
 								""
 							)}
 							<div id="dandt" style={{ display: "none" }}></div>
+
 							<div className="flex justify-center">
-								<a
-									id="address"
-									href={time < "0" ? props[1].knowMore : props[1].formLink}
-								>
-									<button
-										id="btnval"
-										className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-lg"
-										type="button"
+								{props[1].knowMore || props[1].formLink ? (
+									<a
+										id="address"
+										href={time < "0" ? props[1].knowMore : props[1].formLink}
 									>
-										{time < "0" ? "Know-More" : "Register"}
-									</button>
-								</a>
+										<button
+											id="btnval"
+											className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-lg"
+											type="button"
+										>
+											{time < "0" ? "Know-More" : "Register"}
+										</button>
+									</a>
+								) : null}
 								<a href="mailto:ieeesb@mbcet.ac.in">
 									<button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
 										Contact
