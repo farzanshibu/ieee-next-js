@@ -21,10 +21,6 @@ export default class CustomDocument extends Document {
 						referrerPolicy="no-referrer"
 					/>
 					<link
-						rel="stylesheet"
-						href="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1/assets/css/atcb.min.css"
-					></link>
-					<link
 						href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700&display=optional"
 						rel="stylesheet"
 					/>
@@ -32,11 +28,6 @@ export default class CustomDocument extends Document {
 				<body>
 					<Main />
 					<NextScript />
-					<script
-						src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1"
-						async
-						defer
-					></script>
 				</body>
 			</Html>
 		);

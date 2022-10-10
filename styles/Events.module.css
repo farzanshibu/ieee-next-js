@@ -20,7 +20,7 @@
 	padding: 7px 0;
 }
 .card.cardHasBg:hover .statusBar {
-	width: 160px;
+	width: 200px;
 	height: 35px;
 }
 

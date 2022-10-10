@@ -70,7 +70,6 @@ function Contact(props) {
 										})
 											.then((response) => response.json())
 											.then((data) => {
-												console.log("Success:", data);
 												toast.success(" Successfully", {
 													position: "bottom-right",
 													autoClose: 5000,
@@ -83,7 +82,6 @@ function Contact(props) {
 												});
 											})
 											.catch((error) => {
-												console.error("Error:", error);
 												toast.error(" Something went wrong", {
 													position: "bottom-right",
 													theme: "colored",

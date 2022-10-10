@@ -3,8 +3,6 @@ import Link from "next/link";
 import Client from "../client";
 
 export default function FourOhFour() {
-	console.log();
-
 	return (
 		<>
 			<Head>

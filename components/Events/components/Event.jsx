@@ -42,7 +42,7 @@ function Event(props) {
 										className="fa-solid fa-calendar-check"
 										style={{ fontSize: "15px", padding: "7px 0" }}
 									></i>
-									<div id={styles.countDownBox} className="text-center">
+									<div id={styles.countDownBox} className="">
 										<Clock deadline={props.DateandTime} />
 									</div>
 								</div>
