@@ -1,11 +1,3 @@
-/**
- * Template Name: NewBiz - v3.0.0
- * Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-console.log("Hello World");
-
 (function ($) {
 	"use strict";
 
@@ -57,7 +49,11 @@ console.log("Hello World");
 		scrolltoOffset += 20;
 	}
 	$(document).on("click", ".mainNav a, .mobileNav a, .scrollto", function (e) {
-		if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+		if (
+			location.pathname.replace(/^\//, "") ==
+				this.pathname.replace(/^\//, "") &&
+			location.hostname == this.hostname
+		) {
 			var target = $(this.hash);
 			if (target.length) {
 				e.preventDefault();
@@ -140,7 +136,9 @@ console.log("Hello World");
 			class: "mobileNav d-lg-none",
 		});
 		$("body").append($mobile_nav);
-		$("body").prepend('<button type="button" class="mobileNav-toggle d-lg-none"><i class="fa fa-bars"></i></button>');
+		$("body").prepend(
+			'<button type="button" class="mobileNav-toggle d-lg-none"><i class="fa fa-bars"></i></button>',
+		);
 		$("body").append('<div class="mobileNav-overly"></div>');
 
 		$(document).on("click", ".mobileNav-toggle", function (e) {

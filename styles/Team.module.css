@@ -105,3 +105,7 @@
 #team .member .social .socialIcon:hover {
 	filter: saturate(3);
 }
+.removePaM div > p {
+	margin-top: 0.5rem !important;
+	margin-bottom: 0 !important;
+}
